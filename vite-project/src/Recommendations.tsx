@@ -26,7 +26,7 @@ const RecommendationForm: React.FC = () => {
 
     return (
         <div>
-            <h2>Monitor Recommendations</h2>
+            <h2>Recommendations:</h2>
             {monitors.map((monitor) => (
                 <div key={monitor.id}>
                     <h3>{monitor.name}</h3>
