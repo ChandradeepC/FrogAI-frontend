@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Component.css"
+import "./Component.css";
 
 interface Props {}
 
@@ -12,7 +12,9 @@ const OptionalFilterForm: React.FC<Props> = () => {
   const [panel, setPanel] = useState<string>("nopref");
   const [backlight, setBacklight] = useState<string>("nopref");
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = event.target;
     switch (name) {
       case "aspect":
@@ -45,11 +47,11 @@ const OptionalFilterForm: React.FC<Props> = () => {
     <div className="form-container">
       <div>
         <label htmlFor="aspect">Aspect:</label>
-        <select 
-            id="aspect" 
-            name="aspect" 
-            value={aspect} 
-            onChange={handleInputChange}
+        <select
+          id="aspect"
+          name="aspect"
+          value={aspect}
+          onChange={handleInputChange}
         >
           <option value="nopref">No preference</option>
           <option value="wide">Wide</option>
@@ -72,12 +74,7 @@ const OptionalFilterForm: React.FC<Props> = () => {
       </div>
       <div>
         <label htmlFor="size">Size:</label>
-        <select
-          id="size"
-          name="size"
-          value={size}
-          onChange={handleInputChange}
-        >
+        <select id="size" name="size" value={size} onChange={handleInputChange}>
           <option value="nopref">No Preference</option>
           <option value="24">24"</option>
           <option value="25">25"</option>
@@ -91,12 +88,7 @@ const OptionalFilterForm: React.FC<Props> = () => {
       {size === "49" && (
         <div>
           <label htmlFor="res">Resolution:</label>
-          <select
-            id="res"
-            name="res"
-            value={res}
-            onChange={handleInputChange}
-          >
+          <select id="res" name="res" value={res} onChange={handleInputChange}>
             <option value="nopref">No preference</option>
             <option value="5120x1440">5120x1440</option>
             <option value="3840x1080">3840x1080</option>
@@ -104,7 +96,7 @@ const OptionalFilterForm: React.FC<Props> = () => {
         </div>
       )}
       <div>
-      <label htmlFor="minRR">Minimum Refresh Rate:</label>
+        <label htmlFor="minRR">Minimum Refresh Rate:</label>
         <select
           id="minRR"
           name="minRR"
@@ -151,4 +143,3 @@ const OptionalFilterForm: React.FC<Props> = () => {
 };
 
 export default OptionalFilterForm;
-

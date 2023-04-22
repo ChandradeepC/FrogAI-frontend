@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Component.css"
+import "./Component.css";
 
 interface Props {}
 
@@ -9,8 +9,7 @@ const DeviceAndBudgetForm: React.FC<Props> = () => {
   const [console, setConsole] = useState<string>("no");
   const [budget, setBudget] = useState<number>(0);
 
-  let gpus: string[] = 
-  [
+  let gpus: string[] = [
     "4090",
     "4080",
     "7900xtx",
@@ -85,9 +84,11 @@ const DeviceAndBudgetForm: React.FC<Props> = () => {
     "560",
     "550",
     "1030",
-]
+  ];
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = event.target;
     switch (name) {
       case "pc-gpu":
@@ -111,13 +112,18 @@ const DeviceAndBudgetForm: React.FC<Props> = () => {
     <div className="form-container">
       <div>
         <label htmlFor="pc-gpu">GPU:</label>
-        <select id="pc-gpu" name="pc-gpu" value={pcGpu} onChange={handleInputChange}>
-        <option value="">Select GPU</option>
-        {gpus.map((gpu) => (
-        <option key={gpu} value={gpu}>
-            {gpu}
-        </option>
-        ))}
+        <select
+          id="pc-gpu"
+          name="pc-gpu"
+          value={pcGpu}
+          onChange={handleInputChange}
+        >
+          <option value="">Select GPU</option>
+          {gpus.map((gpu) => (
+            <option key={gpu} value={gpu}>
+              {gpu}
+            </option>
+          ))}
         </select>
       </div>
       <div>
