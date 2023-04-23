@@ -1,2 +1,4 @@
 # FrogAI-frontend
-Frontend for FrogAI Web Application using Vite, React and Typescript.
+
+Frontend for FrogAI monitor recommendation web application using Vite + React +
+TypeScript JSX
