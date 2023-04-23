@@ -1,32 +1,21 @@
-import React, { useState } from 'react';
+import React, { HTMLInputTypeAttribute, useState } from 'react';
 import './Component.css';
 
-interface Props {}
+interface Props {
+    print: string;
+    edit: string;
+    grade: string;
+    handleInputChange: (
+        event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
+    ) => void;
+}
 
-const SpecialForm: React.FC<Props> = () => {
-    const [print, setPrint] = useState<string>('no');
-    const [edit, setEdit] = useState<string>('no');
-    const [grade, setGrade] = useState<string>('no');
-
-    const handleInputChange = (
-        event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-    ) => {
-        const { name, value } = event.target;
-        switch (name) {
-            case 'print':
-                setPrint(value);
-                break;
-            case 'edit':
-                setEdit(value);
-                break;
-            case 'grade':
-                setGrade(value);
-                break;
-            default:
-                break;
-        }
-    };
-
+const SpecialForm: React.FC<Props> = ({
+    print,
+    edit,
+    grade,
+    handleInputChange
+}) => {
     return (
         <div className="form-container">
             <div>

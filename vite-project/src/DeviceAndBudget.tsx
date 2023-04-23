@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
 import './Component.css';
 
-interface Props {}
+interface Props {
+    pcGpu: string;
+    mac: string;
+    console: string;
+    budget: number;
+    handleInputChange: (
+        event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
+    ) => void;
+}
 
-const DeviceAndBudgetForm: React.FC<Props> = () => {
-    const [pcGpu, setPcGpu] = useState<string>('no');
-    const [mac, setMac] = useState<string>('no');
-    const [console, setConsole] = useState<string>('no');
-    const [budget, setBudget] = useState<number>(0);
-
+const DeviceAndBudgetForm: React.FC<Props> = ({
+    pcGpu,
+    mac,
+    console,
+    budget,
+    handleInputChange
+}) => {
     let gpus: string[] = [
         '4090',
         '4080',
@@ -29,8 +38,6 @@ const DeviceAndBudgetForm: React.FC<Props> = () => {
         '3070',
         '6700xt',
         '2080ti',
-        'series_x',
-        'ps5',
         '3060ti',
         '2080super',
         '6700',
@@ -60,7 +67,6 @@ const DeviceAndBudgetForm: React.FC<Props> = () => {
         '1660ti',
         '1070',
         '1660',
-        'series_s',
         '5500xt_8gb',
         '590',
         '980ti',
@@ -85,28 +91,6 @@ const DeviceAndBudgetForm: React.FC<Props> = () => {
         '550',
         '1030'
     ];
-
-    const handleInputChange = (
-        event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-    ) => {
-        const { name, value } = event.target;
-        switch (name) {
-            case 'pc-gpu':
-                setPcGpu(value);
-                break;
-            case 'mac':
-                setMac(value);
-                break;
-            case 'console':
-                setConsole(value);
-                break;
-            case 'budget':
-                setBudget(parseInt(value));
-                break;
-            default:
-                break;
-        }
-    };
 
     return (
         <div className="form-container">
