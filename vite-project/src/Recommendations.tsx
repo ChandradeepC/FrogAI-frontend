@@ -1,7 +1,26 @@
 import React, { useState, useEffect } from 'react';
 
+interface Props {
+    pcGpu: string;
+    mac: string;
+    consoles: string;
+    budget: number;
+    motion: string;
+    pq: string;
+    sharp: string;
+    print: string;
+    edit: string;
+    grade: string;
+    aspect: string;
+    curve: string;
+    size: string;
+    res: string;
+    minRR: string;
+    panel: string;
+    backlight: string;
+}
+
 interface Monitor {
-    id: number;
     name: string;
     resolution: string;
     refreshRate: number;
@@ -15,20 +34,89 @@ interface Monitor {
     reviews: string[];
 }
 
-const RecommendationForm: React.FC = () => {
-    const [monitors, setMonitors] = useState<Monitor[]>([]);
+const RecommendationForm: React.FC<Props> = ({
+    pcGpu,
+    mac,
+    consoles,
+    budget,
+    motion,
+    pq,
+    sharp,
+    print,
+    edit,
+    grade,
+    aspect,
+    curve,
+    size,
+    res,
+    minRR,
+    panel,
+    backlight
+}) => {
+    const [monitorRecommendations, setMonitorRecommendations] = useState<
+        Monitor[]
+    >([]);
 
     useEffect(() => {
-        fetch('/api/monitor-recommendations')
-            .then((res) => res.json())
-            .then((data) => setMonitors(data));
-    }, []);
+        const data = {
+            pcGpu,
+            mac,
+            consoles,
+            budget,
+            motion,
+            pq,
+            sharp,
+            print,
+            edit,
+            grade,
+            aspect,
+            curve,
+            size,
+            res,
+            minRR,
+            panel,
+            backlight
+        };
+
+        fetch('http://127.0.0.1:5000/api/monitor-recommendations', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setMonitorRecommendations(data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, [
+        pcGpu,
+        mac,
+        consoles,
+        budget,
+        motion,
+        pq,
+        sharp,
+        print,
+        edit,
+        grade,
+        aspect,
+        curve,
+        size,
+        res,
+        minRR,
+        panel,
+        backlight
+    ]);
 
     return (
         <div>
             <h2>Recommendations:</h2>
-            {monitors.map((monitor) => (
-                <div key={monitor.id}>
+            {monitorRecommendations.map((monitor) => (
+                <div>
                     <h3>{monitor.name}</h3>
                     <p>Resolution: {monitor.resolution}</p>
                     <p>Refresh Rate: {monitor.refreshRate} Hz</p>

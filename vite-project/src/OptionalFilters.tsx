@@ -71,21 +71,19 @@ const OptionalFilterForm: React.FC<Props> = ({
                     <option value="49">49"</option>
                 </select>
             </div>
-            {size === '49' && (
-                <div>
-                    <label htmlFor="res">Resolution:</label>
-                    <select
-                        id="res"
-                        name="res"
-                        value={res}
-                        onChange={handleInputChange}
-                    >
-                        <option value="nopref">No preference</option>
-                        <option value="5120x1440">5120x1440</option>
-                        <option value="3840x1080">3840x1080</option>
-                    </select>
-                </div>
-            )}
+            <div>
+                <label htmlFor="res">Resolution:</label>
+                <select
+                    id="res"
+                    name="res"
+                    value={res}
+                    onChange={handleInputChange}
+                >
+                    <option value="nopref">No preference</option>
+                    <option value="5120x1440">5120x1440</option>
+                    <option value="3840x1080">3840x1080</option>
+                </select>
+            </div>
             <div>
                 <label htmlFor="minRR">Minimum Refresh Rate:</label>
                 <select

@@ -131,7 +131,25 @@ const App = () => {
                     />
                 </div>
                 <div className="right-column">
-                    <RecommendationForm />
+                    <RecommendationForm
+                        pcGpu={pcGpu}
+                        mac={mac}
+                        consoles={console}
+                        budget={budget}
+                        motion={motion}
+                        pq={pq}
+                        sharp={sharp}
+                        print={print}
+                        edit={edit}
+                        grade={grade}
+                        aspect={aspect}
+                        curve={curve}
+                        size={size}
+                        res={res}
+                        minRR={minRR}
+                        panel={panel}
+                        backlight={backlight}
+                    />
                 </div>
             </div>
         </div>
