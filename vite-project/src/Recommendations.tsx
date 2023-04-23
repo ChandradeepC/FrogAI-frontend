@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Recommendations.css';
 
 interface Props {
     pcGpu: string;
@@ -116,7 +117,7 @@ const RecommendationForm: React.FC<Props> = ({
         <div>
             <h2>Recommendations:</h2>
             {monitorRecommendations.map((monitor) => (
-                <div>
+                <div key={monitor.name} className="monitor-box">
                     <h3>{monitor.name}</h3>
                     <p>Resolution: {monitor.resolution}</p>
                     <p>Refresh Rate: {monitor.refreshRate} Hz</p>
@@ -125,7 +126,7 @@ const RecommendationForm: React.FC<Props> = ({
                     <p>Cost: ${monitor.cost.toFixed(2)}</p>
                     <p>Minimum GPU: {monitor.minGpu}</p>
                     <p>Special Features: {monitor.specialFeatures}</p>
-                    <p>Curved: {monitor.curve ? 'Yes' : 'No'}</p>
+                    <p>Curved: {monitor.curve}</p>
                     <p>Aspect Ratio: {monitor.aspectRatio}</p>
                     <p>Reviews: {monitor.reviews.join(', ')}</p>
                 </div>

@@ -1,0 +1,22 @@
+.monitor-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .monitor-box h3 {
+    margin-top: 0;
+  }
+  
+  .monitor-box p {
+    margin: 0;
+  }
+  
+  /* .monitor-box p:first-of-type {
+    font-weight: bold;
+  } */
+  
+  .monitor-box p:last-of-type {
+    margin-bottom: 0;
+  }
+  
