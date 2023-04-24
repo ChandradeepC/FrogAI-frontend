@@ -94,8 +94,12 @@ const DeviceAndBudgetForm: React.FC<Props> = ({
 
     return (
         <div className="form-container">
+            <h2>Platform and budget:</h2>
             <div>
-                <label htmlFor="pc-gpu">GPU:</label>
+                <label htmlFor="pc-gpu">
+                    Do you plan to use the monitor with a PC? If yes, choose
+                    your GPU:
+                </label>
                 <select
                     id="pc-gpu"
                     name="pc-gpu"
@@ -111,7 +115,9 @@ const DeviceAndBudgetForm: React.FC<Props> = ({
                 </select>
             </div>
             <div>
-                <label htmlFor="mac">Mac:</label>
+                <label htmlFor="mac">
+                    Do you plan to use the monitor with a Mac desktop or laptop?{' '}
+                </label>
                 <select
                     id="mac"
                     name="mac"
@@ -123,7 +129,10 @@ const DeviceAndBudgetForm: React.FC<Props> = ({
                 </select>
             </div>
             <div>
-                <label htmlFor="console">Console:</label>
+                <label htmlFor="console">
+                    Do you plan to use the monitor with a console? If yes,
+                    choose your console:{' '}
+                </label>
                 <select
                     id="console"
                     name="console"
@@ -137,7 +146,7 @@ const DeviceAndBudgetForm: React.FC<Props> = ({
                 </select>
             </div>
             <div>
-                <label htmlFor="budget">Budget:</label>
+                <label htmlFor="budget">What is your budget? </label>
                 <input
                     type="number"
                     id="budget"

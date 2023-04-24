@@ -18,8 +18,11 @@ const SpecialForm: React.FC<Props> = ({
 }) => {
     return (
         <div className="form-container">
+            <h2> Special use cases: </h2>
             <div>
-                <label htmlFor="print">Print:</label>
+                <label htmlFor="print">
+                    Will you use the monitor for print photo editing?
+                </label>
                 <select
                     id="print"
                     name="print"
@@ -31,7 +34,10 @@ const SpecialForm: React.FC<Props> = ({
                 </select>
             </div>
             <div>
-                <label htmlFor="edit">Edit:</label>
+                <label htmlFor="edit">
+                    Will you use the monitor for digital photo editing or SDR
+                    video editing?
+                </label>
                 <select
                     id="edit"
                     name="edit"
@@ -43,7 +49,10 @@ const SpecialForm: React.FC<Props> = ({
                 </select>
             </div>
             <div>
-                <label htmlFor="grade">Grade:</label>
+                <label htmlFor="grade">
+                    Will you use the monitor for SDR/HDR color grading or HDR
+                    video editing?
+                </label>
                 <select
                     id="grade"
                     name="grade"

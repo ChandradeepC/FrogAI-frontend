@@ -98,8 +98,10 @@ const App = () => {
                 />
                 <h1 className="header">FrogAI</h1>
             </div>
+
             <div className="forms-container">
                 <div className="left-column">
+                    <h2>Form:</h2>
                     <DeviceAndBudgetForm
                         pcGpu={pcGpu}
                         mac={mac}

@@ -120,15 +120,37 @@ const RecommendationForm: React.FC<Props> = ({
                 <div key={monitor.name} className="monitor-box">
                     <h3>{monitor.name}</h3>
                     <p>Resolution: {monitor.resolution}</p>
-                    <p>Refresh Rate: {monitor.refreshRate} Hz</p>
-                    <p>Panel Type: {monitor.panel}</p>
+                    <p>Refresh rate: {monitor.refreshRate} Hz</p>
+                    <p>Panel: {monitor.panel}</p>
                     <p>Size: {monitor.size}"</p>
-                    <p>Cost: ${monitor.cost.toFixed(2)}</p>
-                    <p>Minimum GPU: {monitor.minGpu}</p>
-                    <p>Special Features: {monitor.specialFeatures}</p>
+                    {/* <p>Cost: ${monitor.cost.toFixed(2)}</p>
+                    <p>Minimum GPU: {monitor.minGpu}</p> */}
+                    {monitor.specialFeatures && (
+                        <div>
+                            <p>Notes: {monitor.specialFeatures}</p>
+                        </div>
+                    )}
                     <p>Curved: {monitor.curve}</p>
-                    <p>Aspect Ratio: {monitor.aspectRatio}</p>
-                    <p>Reviews: {monitor.reviews.join(', ')}</p>
+                    <p>Aspect ratio: {monitor.aspectRatio}</p>
+                    <p>
+                        Approved reviews:{' '}
+                        {monitor.reviews.length > 0 ? (
+                            monitor.reviews.map((reviewUrl) => (
+                                <div key={reviewUrl}>
+                                    &#8226;&nbsp;{' '}
+                                    <a
+                                        href={reviewUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {reviewUrl}
+                                    </a>
+                                </div>
+                            ))
+                        ) : (
+                            <span>None yet</span>
+                        )}
+                    </p>
                 </div>
             ))}
         </div>

@@ -26,8 +26,9 @@ const OptionalFilterForm: React.FC<Props> = ({
 }) => {
     return (
         <div className="form-container">
+            <h2>Optional filters:</h2>
             <div>
-                <label htmlFor="aspect">Aspect:</label>
+                <label htmlFor="aspect">Aspect ratio: </label>
                 <select
                     id="aspect"
                     name="aspect"
@@ -41,7 +42,7 @@ const OptionalFilterForm: React.FC<Props> = ({
                 </select>
             </div>
             <div>
-                <label htmlFor="curve">Curve:</label>
+                <label htmlFor="curve">Curve: </label>
                 <select
                     id="curve"
                     name="curve"
@@ -54,7 +55,7 @@ const OptionalFilterForm: React.FC<Props> = ({
                 </select>
             </div>
             <div>
-                <label htmlFor="size">Size:</label>
+                <label htmlFor="size">Size: </label>
                 <select
                     id="size"
                     name="size"
@@ -72,7 +73,7 @@ const OptionalFilterForm: React.FC<Props> = ({
                 </select>
             </div>
             <div>
-                <label htmlFor="res">Resolution:</label>
+                <label htmlFor="res">Resolution: </label>
                 <select
                     id="res"
                     name="res"
@@ -80,12 +81,19 @@ const OptionalFilterForm: React.FC<Props> = ({
                     onChange={handleInputChange}
                 >
                     <option value="nopref">No preference</option>
-                    <option value="5120x1440">5120x1440</option>
-                    <option value="3840x1080">3840x1080</option>
+                    <option value="5120x1440p">5120x1440p (UWDQHD)</option>
+                    <option value="2560x1440p">2560x1440p (WQHD)</option>
+                    <option value="2560x1080p">2560x1080p (UWFHD)</option>
+                    <option value="1920x1080p">1920x1080p (FHD)</option>
+                    <option value="3440x1440p">3440x1440p (UWQHD)</option>
+                    <option value="2560x1080p">2560x1080p</option>
+                    <option value="3840x2160p">3840x2160p (UHD 4K)</option>
+                    <option value="1920x1200p">1920x1200p</option>
+                    <option value="3840x1600p">3840x1600p</option>
                 </select>
             </div>
             <div>
-                <label htmlFor="minRR">Minimum Refresh Rate:</label>
+                <label htmlFor="minRR">Minimum refresh rate: </label>
                 <select
                     id="minRR"
                     name="minRR"
@@ -93,15 +101,17 @@ const OptionalFilterForm: React.FC<Props> = ({
                     onChange={handleInputChange}
                 >
                     <option value="nopref">No preference</option>
-                    <option value="60hz">60Hz</option>
-                    <option value="75hz">75Hz</option>
-                    <option value="120hz">120Hz</option>
-                    <option value="144hz">144Hz</option>
-                    <option value="240hz">240Hz</option>
+                    <option value="60hz">60hz</option>
+                    <option value="75hz">75hz</option>
+                    <option value="120hz">120hz</option>
+                    <option value="144hz">144hz</option>
+                    <option value="240hz">240hz</option>
+                    <option value="360hz">360hz</option>
+                    <option value="500hz">500hz</option>
                 </select>
             </div>
             <div>
-                <label htmlFor="panel">Panel Type:</label>
+                <label htmlFor="panel">Panel type: </label>
                 <select
                     id="panel"
                     name="panel"
@@ -109,14 +119,14 @@ const OptionalFilterForm: React.FC<Props> = ({
                     onChange={handleInputChange}
                 >
                     <option value="nopref">No preference</option>
-                    <option value="ips">IPS</option>
-                    <option value="tn">TN</option>
-                    <option value="va">VA</option>
-                    <option value="va">OLED</option>
+                    <option value="IPS">IPS</option>
+                    <option value="TN">TN</option>
+                    <option value="VA">VA</option>
+                    <option value="OLED">OLED</option>
                 </select>
             </div>
             <div>
-                <label htmlFor="backlight">Backlight Type:</label>
+                <label htmlFor="backlight">Backlight type: </label>
                 <select
                     id="backlight"
                     name="backlight"
@@ -124,7 +134,8 @@ const OptionalFilterForm: React.FC<Props> = ({
                     onChange={handleInputChange}
                 >
                     <option value="nopref">No preference</option>
-                    <option value="oled">MiniLED</option>
+                    <option value="miniLED">MiniLED</option>
+                    <option value="FALD">FALD</option>
                 </select>
             </div>
         </div>
