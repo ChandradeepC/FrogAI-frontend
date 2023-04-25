@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import frogaiLogo from './assets/frogai.jpg';
 import './App.css';
 import DeviceAndBudgetForm from './DeviceAndBudget';
