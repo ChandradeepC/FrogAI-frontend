@@ -115,16 +115,18 @@ const RecommendationForm: React.FC<Props> = ({
 
     return (
         <div>
-            <h2>Recommendations:</h2>
+            {/* <h2>Recommendations:</h2> */}
             {monitorRecommendations.map((monitor) => (
                 <div key={monitor.name} className="monitor-box">
-                    <h3>{monitor.name}</h3>
+                    <h3>
+                        <span>{monitor.name}</span>
+                        <span className="cost">${monitor.cost.toFixed(0)}</span>
+                    </h3>
                     <p>Resolution: {monitor.resolution}</p>
                     <p>Refresh rate: {monitor.refreshRate} Hz</p>
                     <p>Panel: {monitor.panel}</p>
                     <p>Size: {monitor.size}"</p>
-                    {/* <p>Cost: ${monitor.cost.toFixed(2)}</p>
-                    <p>Minimum GPU: {monitor.minGpu}</p> */}
+                    {/* <p>Minimum GPU: {monitor.minGpu}</p> */}
                     {monitor.specialFeatures && (
                         <div>
                             <p>Notes: {monitor.specialFeatures}</p>

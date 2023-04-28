@@ -26,8 +26,8 @@ const OptionalFilterForm: React.FC<Props> = ({
 }) => {
     return (
         <div className="form-container">
-            <h2>Optional filters:</h2>
-            <div>
+            <h2>Optional filters</h2>
+            <div className="field">
                 <label htmlFor="aspect">Aspect ratio: </label>
                 <select
                     id="aspect"
@@ -41,7 +41,7 @@ const OptionalFilterForm: React.FC<Props> = ({
                     <option value="superultrawide">Super Ultra Wide</option>
                 </select>
             </div>
-            <div>
+            <div className="field">
                 <label htmlFor="curve">Curve: </label>
                 <select
                     id="curve"
@@ -54,7 +54,7 @@ const OptionalFilterForm: React.FC<Props> = ({
                     <option value="yes">Yes</option>
                 </select>
             </div>
-            <div>
+            <div className="field">
                 <label htmlFor="size">Size: </label>
                 <select
                     id="size"
@@ -72,7 +72,7 @@ const OptionalFilterForm: React.FC<Props> = ({
                     <option value="49">49"</option>
                 </select>
             </div>
-            <div>
+            <div className="field">
                 <label htmlFor="res">Resolution: </label>
                 <select
                     id="res"
@@ -92,7 +92,7 @@ const OptionalFilterForm: React.FC<Props> = ({
                     <option value="3840x1600p">3840x1600p</option>
                 </select>
             </div>
-            <div>
+            <div className="field">
                 <label htmlFor="minRR">Minimum refresh rate: </label>
                 <select
                     id="minRR"
@@ -110,7 +110,7 @@ const OptionalFilterForm: React.FC<Props> = ({
                     <option value="500hz">500hz</option>
                 </select>
             </div>
-            <div>
+            <div className="field">
                 <label htmlFor="panel">Panel type: </label>
                 <select
                     id="panel"
@@ -125,7 +125,7 @@ const OptionalFilterForm: React.FC<Props> = ({
                     <option value="OLED">OLED</option>
                 </select>
             </div>
-            <div>
+            <div className="field">
                 <label htmlFor="backlight">Backlight type: </label>
                 <select
                     id="backlight"

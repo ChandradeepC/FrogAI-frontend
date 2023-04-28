@@ -94,12 +94,9 @@ const DeviceAndBudgetForm: React.FC<Props> = ({
 
     return (
         <div className="form-container">
-            <h2>Platform and budget:</h2>
-            <div>
-                <label htmlFor="pc-gpu">
-                    Do you plan to use the monitor with a PC? If yes, choose
-                    your GPU:
-                </label>
+            <h2>Platform and budget</h2>
+            <div className="field">
+                <label htmlFor="pc-gpu">Do you have a PC?</label>
                 <select
                     id="pc-gpu"
                     name="pc-gpu"
@@ -114,10 +111,8 @@ const DeviceAndBudgetForm: React.FC<Props> = ({
                     ))}
                 </select>
             </div>
-            <div>
-                <label htmlFor="mac">
-                    Do you plan to use the monitor with a Mac desktop or laptop?{' '}
-                </label>
+            <div className="field">
+                <label htmlFor="mac">Do you have a Mac? </label>
                 <select
                     id="mac"
                     name="mac"
@@ -128,25 +123,23 @@ const DeviceAndBudgetForm: React.FC<Props> = ({
                     <option value="yes">Yes</option>
                 </select>
             </div>
-            <div>
-                <label htmlFor="console">
-                    Do you plan to use the monitor with a console? If yes,
-                    choose your console:{' '}
-                </label>
+            <div className="field">
+                <label htmlFor="console">Do you have a console?: </label>
                 <select
                     id="console"
                     name="console"
                     value={console}
                     onChange={handleInputChange}
                 >
+                    <option value="">Select console</option>
                     <option value="no">No</option>
                     <option value="xbox-series-s">Xbox Series S</option>
                     <option value="xbox-series-x">Xbox Series X</option>
                     <option value="ps5">PS5</option>
                 </select>
             </div>
-            <div>
-                <label htmlFor="budget">What is your budget? </label>
+            <div className="field">
+                <label htmlFor="budget">Budget: </label>
                 <input
                     type="number"
                     id="budget"

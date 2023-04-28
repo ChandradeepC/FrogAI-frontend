@@ -2,19 +2,24 @@ import { useState } from 'react';
 import frogaiLogo from './assets/frogai.jpg';
 import './App.css';
 import DeviceAndBudgetForm from './DeviceAndBudget';
-import UseCasesForm from './UseCases';
+import AdvancedForm from './Advanced';
 import SpecialForm from './Special';
 import OptionalFilterForm from './OptionalFilters';
 import RecommendationForm from './Recommendations';
+import UseCasesForm from './UseCases';
 
 const App = () => {
-    const [pcGpu, setPcGpu] = useState<string>('no');
+    const [pcGpu, setPcGpu] = useState<string>('');
     const [mac, setMac] = useState<string>('no');
-    const [console, setConsole] = useState<string>('no');
+    const [console, setConsole] = useState<string>('');
     const [budget, setBudget] = useState<number>(0);
     const [motion, setMotion] = useState<string>('not');
     const [pq, setPq] = useState<string>('not');
     const [sharp, setSharp] = useState<string>('not');
+    const [casual, setCasual] = useState<string>('not');
+    const [comp, setComp] = useState<string>('not');
+    const [text, setText] = useState<string>('not');
+    const [media, setMedia] = useState<string>('not');
     const [print, setPrint] = useState<string>('no');
     const [edit, setEdit] = useState<string>('no');
     const [grade, setGrade] = useState<string>('no');
@@ -39,18 +44,35 @@ const App = () => {
                 break;
             case 'console':
                 setConsole(value);
+                // if (value !== 'no' && value !== '') {
+                //     setPrint('no');
+                //     setEdit('no');
+                //     setGrade('no');
+                // }
                 break;
             case 'budget':
                 setBudget(parseInt(value));
                 break;
             case 'motion':
                 setMotion(value);
+                if (value === 'only') {
+                    setPq('not');
+                    setSharp('not');
+                }
                 break;
             case 'pq':
                 setPq(value);
+                if (value === 'only') {
+                    setMotion('not');
+                    setSharp('not');
+                }
                 break;
             case 'sharp':
                 setSharp(value);
+                if (value === 'only') {
+                    setPq('not');
+                    setMotion('not');
+                }
                 break;
             case 'aspect':
                 setAspect(value);
@@ -90,17 +112,20 @@ const App = () => {
     return (
         <div className="wrapper">
             <div className="header-container">
-                <img
-                    src={frogaiLogo}
-                    alt="FrogAI Logo"
-                    className="frogai-logo"
-                />
-                <h1 className="header">FrogAI</h1>
+                <div className="color-bar"></div>
+                <div className="brand">
+                    <img
+                        src={frogaiLogo}
+                        alt="FrogAI Logo"
+                        className="frogai-logo"
+                    />
+                    <h1 className="header">FrogAI</h1>
+                </div>
             </div>
 
             <div className="forms-container">
                 <div className="left-column">
-                    <h2>Form:</h2>
+                    {/* <h2>Form:</h2> */}
                     <DeviceAndBudgetForm
                         pcGpu={pcGpu}
                         mac={mac}
@@ -108,7 +133,7 @@ const App = () => {
                         budget={budget}
                         handleInputChange={handleInputChange}
                     />
-                    <UseCasesForm
+                    <AdvancedForm
                         motion={motion}
                         pq={pq}
                         sharp={sharp}
@@ -118,6 +143,9 @@ const App = () => {
                         print={print}
                         edit={edit}
                         grade={grade}
+                        console={console}
+                        mac={mac}
+                        pcGpu={pcGpu}
                         handleInputChange={handleInputChange}
                     />
                     <OptionalFilterForm
