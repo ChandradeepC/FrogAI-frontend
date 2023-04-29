@@ -144,47 +144,94 @@ const RecommendationForm: React.FC<Props> = ({
 
     return (
         <div>
+            {print === 'yes' || edit === 'yes' || grade === 'yes' ? (
+                <div>
+                    <div className="monitor-box">
+                        <h3>
+                            <span>
+                                Calibrite ColorChecker Display (Pro/Plus)
+                            </span>
+                            <span className="cost"> $170/280/320</span>
+                        </h3>
+                        <p>
+                            <label>Display:</label> slower; upto 1000 nits
+                            <span></span>
+                        </p>
+                        <p>
+                            <label>Display Pro retail:</label> faster; upto 1000
+                            nits
+                            <span></span>
+                        </p>
+                        <p>
+                            <label>Display Pro OEM / Plus:</label> faster; upto
+                            2000 nits<span></span>
+                        </p>
+                        <p>
+                            <label>Calibration guide:</label>{' '}
+                            <a
+                                href={
+                                    'https://www.youtube.com/watch?v=f2nVNxx1IHo'
+                                }
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {'https://www.youtube.com/watch?v=f2nVNxx1IHo'}
+                            </a>
+                        </p>
+                    </div>
+                    <div className="medium-plus">+</div>
+                </div>
+            ) : null}
             {monitorRecommendations.map((monitor) => (
                 <div key={monitor.name} className="monitor-box">
                     <h3>
                         <span>{monitor.name}</span>
                         <span className="cost">${monitor.cost.toFixed(0)}</span>
                     </h3>
-                    <p>
-                        <label>Resolution:</label>{' '}
-                        <span>{monitor.resolution}</span>
-                    </p>
-                    <p>
-                        <label>Refresh rate:</label>{' '}
-                        <span>{monitor.refreshRate} Hz</span>
-                    </p>
-                    <p>
-                        <label>Panel:</label> <span>{monitor.panel}</span>
-                    </p>
-                    <p>
-                        <label>Size:</label> <span>{monitor.size}"</span>
-                    </p>
-                    {/* <p>Minimum GPU: {monitor.minGpu}</p> */}
-                    {monitor.specialFeatures && (
+                    <div className="spec-grid">
+                        <div className="grid-item">
+                            <p>
+                                <label>Resolution:</label>{' '}
+                                <span>{monitor.resolution}</span>
+                            </p>
+                            <p>
+                                <label>Refresh rate:</label>{' '}
+                                <span>{monitor.refreshRate} Hz</span>
+                            </p>
+                            <p>
+                                <label>Panel:</label>{' '}
+                                <span>{monitor.panel}</span>
+                            </p>
+                            <p>
+                                <label>Size:</label>{' '}
+                                <span>{monitor.size}"</span>
+                            </p>
+                        </div>
+                        <div className="grid-item">
+                            {/* <p>Minimum GPU: {monitor.minGpu}</p> */}
+                            <p>
+                                <label>Curved:</label>{' '}
+                                <span>{monitor.curve}</span>
+                            </p>
+                            <p>
+                                <label>Aspect ratio:</label>{' '}
+                                <span>{monitor.aspectRatio}</span>
+                            </p>
+                            <p>
+                                <label>Adobe RGB:</label>{' '}
+                                <span>{monitor.adobeRgb}</span>
+                            </p>
+                            <p>
+                                <label>HDR:</label> <span>{monitor.hdr}</span>
+                            </p>
+                        </div>
+                    </div>
+                    {monitor.specialFeatures !== 'no' && (
                         <p>
                             <label>Notes:</label>{' '}
                             <span>{monitor.specialFeatures}</span>
                         </p>
                     )}
-                    <p>
-                        <label>Curved:</label> <span>{monitor.curve}</span>
-                    </p>
-                    <p>
-                        <label>Aspect ratio:</label>{' '}
-                        <span>{monitor.aspectRatio}</span>
-                    </p>
-                    <p>
-                        <label>Adobe RGB:</label>{' '}
-                        <span>{monitor.adobeRgb}</span>
-                    </p>
-                    <p>
-                        <label>HDR:</label> <span>{monitor.hdr}</span>
-                    </p>
                     <p>
                         <label>Approved reviews:</label>{' '}
                         {monitor.reviews.length > 0 ? (
