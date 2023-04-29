@@ -19,6 +19,10 @@ interface Props {
     minRR: string;
     panel: string;
     backlight: string;
+    casual: string;
+    comp: string;
+    text: string;
+    media: string;
 }
 
 interface Monitor {
@@ -52,7 +56,11 @@ const RecommendationForm: React.FC<Props> = ({
     res,
     minRR,
     panel,
-    backlight
+    backlight,
+    casual,
+    comp,
+    text,
+    media
 }) => {
     const [monitorRecommendations, setMonitorRecommendations] = useState<
         Monitor[]
@@ -110,7 +118,11 @@ const RecommendationForm: React.FC<Props> = ({
         res,
         minRR,
         panel,
-        backlight
+        backlight,
+        casual,
+        comp,
+        text,
+        media
     ]);
 
     return (

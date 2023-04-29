@@ -31,12 +31,16 @@ const App = () => {
     const [minRR, setMinRR] = useState<string>('nopref');
     const [panel, setPanel] = useState<string>('nopref');
     const [backlight, setBacklight] = useState<string>('nopref');
+    const [mode, setMode] = useState<string>('basic');
 
     const handleInputChange = (
         event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
     ) => {
         const { name, value } = event.target;
         switch (name) {
+            case 'mode':
+                setMode(value);
+                break;
             case 'pc-gpu':
                 setPcGpu(value);
                 break;
@@ -45,14 +49,21 @@ const App = () => {
                 break;
             case 'console':
                 setConsole(value);
-                // if (value !== 'no' && value !== '') {
-                //     setPrint('no');
-                //     setEdit('no');
-                //     setGrade('no');
-                // }
                 break;
             case 'budget':
                 setBudget(parseInt(value));
+                break;
+            case 'casual':
+                setCasual(value);
+                break;
+            case 'comp':
+                setComp(value);
+                break;
+            case 'text':
+                setText(value);
+                break;
+            case 'media':
+                setMedia(value);
                 break;
             case 'motion':
                 setMotion(value);
@@ -179,6 +190,10 @@ const App = () => {
                         minRR={minRR}
                         panel={panel}
                         backlight={backlight}
+                        casual={casual}
+                        comp={comp}
+                        text={text}
+                        media={media}
                     />
                 </div>
             </div>
