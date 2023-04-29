@@ -18,7 +18,7 @@ const AdvancedForm: React.FC<Props> = ({
 }) => {
     return (
         <div className="form-container">
-            <h2>Primary requirements</h2>
+            <h2>Advanced requirements</h2>
             <div className="field">
                 <label htmlFor="motion">Motion:</label>
                 <select
@@ -29,7 +29,9 @@ const AdvancedForm: React.FC<Props> = ({
                     disabled={pq === 'only' || sharp === 'only'}
                 >
                     <option value="not">Don't care</option>
+                    <option value="some">Nice to have</option>
                     <option value="imp">Important</option>
+                    <option value="very">Very Important</option>
                     <option value="only">Only thing I care about</option>
                 </select>
             </div>
@@ -43,7 +45,9 @@ const AdvancedForm: React.FC<Props> = ({
                     disabled={motion === 'only' || sharp === 'only'}
                 >
                     <option value="not">Don't care</option>
+                    <option value="some">Nice to have</option>
                     <option value="imp">Important</option>
+                    <option value="very">Very Important</option>
                     <option value="only">Only thing I care about</option>
                 </select>
             </div>
@@ -57,7 +61,9 @@ const AdvancedForm: React.FC<Props> = ({
                     disabled={motion === 'only' || pq === 'only'}
                 >
                     <option value="not">Don't care</option>
+                    <option value="some">Nice to have</option>
                     <option value="imp">Important</option>
+                    <option value="very">Very Important</option>
                     <option value="only">Only thing I care about</option>
                 </select>
             </div>

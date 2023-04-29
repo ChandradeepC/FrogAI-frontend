@@ -30,6 +30,7 @@ const App = () => {
     const [res, setRes] = useState<string>('nopref');
     const [minRR, setMinRR] = useState<string>('nopref');
     const [panel, setPanel] = useState<string>('nopref');
+    const [hdr, setHdr] = useState<string>('nopref');
     const [backlight, setBacklight] = useState<string>('nopref');
     const [mode, setMode] = useState<string>('basic');
 
@@ -38,6 +39,9 @@ const App = () => {
     ) => {
         const { name, value } = event.target;
         switch (name) {
+            case 'hdr':
+                setHdr(value);
+                break;
             case 'mode':
                 setMode(value);
                 break;
@@ -55,15 +59,35 @@ const App = () => {
                 break;
             case 'casual':
                 setCasual(value);
+                if (value === 'only') {
+                    setComp('not');
+                    setText('not');
+                    setMedia('not');
+                }
                 break;
             case 'comp':
                 setComp(value);
+                if (value === 'only') {
+                    setCasual('not');
+                    setText('not');
+                    setMedia('not');
+                }
                 break;
             case 'text':
                 setText(value);
+                if (value === 'only') {
+                    setComp('not');
+                    setCasual('not');
+                    setMedia('not');
+                }
                 break;
             case 'media':
                 setMedia(value);
+                if (value === 'only') {
+                    setComp('not');
+                    setText('not');
+                    setCasual('not');
+                }
                 break;
             case 'motion':
                 setMotion(value);
@@ -121,6 +145,10 @@ const App = () => {
         }
     };
 
+    const handleModeToggle = () => {
+        setMode(mode === 'basic' ? 'advanced' : 'basic');
+    };
+
     return (
         <div className="wrapper">
             <div className="header-container">
@@ -145,12 +173,32 @@ const App = () => {
                         budget={budget}
                         handleInputChange={handleInputChange}
                     />
-                    <AdvancedForm
-                        motion={motion}
-                        pq={pq}
-                        sharp={sharp}
-                        handleInputChange={handleInputChange}
-                    />
+                    <div className="toggle-container">
+                        <label>
+                            <input
+                                type="checkbox"
+                                checked={mode === 'advanced'}
+                                onChange={handleModeToggle}
+                            />
+                            <span className="toggle">Advanced Mode</span>
+                        </label>
+                    </div>
+                    {mode === 'basic' ? (
+                        <UseCasesForm
+                            casual={casual}
+                            comp={comp}
+                            text={text}
+                            media={media}
+                            handleInputChange={handleInputChange}
+                        />
+                    ) : (
+                        <AdvancedForm
+                            motion={motion}
+                            pq={pq}
+                            sharp={sharp}
+                            handleInputChange={handleInputChange}
+                        />
+                    )}
                     <SpecialForm
                         print={print}
                         edit={edit}
@@ -168,6 +216,7 @@ const App = () => {
                         minRR={minRR}
                         panel={panel}
                         backlight={backlight}
+                        hdr={hdr}
                         handleInputChange={handleInputChange}
                     />
                 </div>
@@ -195,6 +244,7 @@ const App = () => {
                         text={text}
                         media={media}
                         mode={mode}
+                        hdr={hdr}
                     />
                 </div>
             </div>

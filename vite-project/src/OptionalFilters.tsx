@@ -9,6 +9,7 @@ interface Props {
     minRR: string;
     panel: string;
     backlight: string;
+    hdr: string;
     handleInputChange: (
         event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
     ) => void;
@@ -22,6 +23,7 @@ const OptionalFilterForm: React.FC<Props> = ({
     minRR,
     panel,
     backlight,
+    hdr,
     handleInputChange
 }) => {
     return (
@@ -136,6 +138,19 @@ const OptionalFilterForm: React.FC<Props> = ({
                     <option value="nopref">No preference</option>
                     <option value="miniLED">MiniLED</option>
                     <option value="FALD">FALD</option>
+                </select>
+            </div>
+            <div className="field">
+                <label htmlFor="hdr">HDR: </label>
+                <select
+                    id="hdr"
+                    name="hdr"
+                    value={hdr}
+                    onChange={handleInputChange}
+                >
+                    <option value="nopref">No preference</option>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
                 </select>
             </div>
         </div>

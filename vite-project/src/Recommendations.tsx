@@ -24,10 +24,14 @@ interface Props {
     text: string;
     media: string;
     mode: string;
+    hdr: string;
 }
 
 interface Monitor {
     name: string;
+    motion: string;
+    pq: string;
+    sharp: string;
     resolution: string;
     refreshRate: number;
     panel: string;
@@ -37,6 +41,8 @@ interface Monitor {
     specialFeatures: string;
     curve: boolean;
     aspectRatio: string;
+    adobeRgb: string;
+    hdr: string;
     reviews: string[];
 }
 
@@ -62,7 +68,8 @@ const RecommendationForm: React.FC<Props> = ({
     comp,
     text,
     media,
-    mode
+    mode,
+    hdr
 }) => {
     const [monitorRecommendations, setMonitorRecommendations] = useState<
         Monitor[]
@@ -87,7 +94,12 @@ const RecommendationForm: React.FC<Props> = ({
             minRR,
             panel,
             backlight,
-            mode
+            casual,
+            comp,
+            media,
+            text,
+            mode,
+            hdr
         };
 
         fetch('http://127.0.0.1:5000/api/monitor-recommendations', {
@@ -122,15 +134,16 @@ const RecommendationForm: React.FC<Props> = ({
         minRR,
         panel,
         backlight,
+        mode,
         casual,
         comp,
         text,
-        media
+        media,
+        hdr
     ]);
 
     return (
         <div>
-            {/* <h2>Recommendations:</h2> */}
             {monitorRecommendations.map((monitor) => (
                 <div key={monitor.name} className="monitor-box">
                     <h3>
@@ -164,6 +177,13 @@ const RecommendationForm: React.FC<Props> = ({
                     <p>
                         <label>Aspect ratio:</label>{' '}
                         <span>{monitor.aspectRatio}</span>
+                    </p>
+                    <p>
+                        <label>Adobe RGB:</label>{' '}
+                        <span>{monitor.adobeRgb}</span>
+                    </p>
+                    <p>
+                        <label>HDR:</label> <span>{monitor.hdr}</span>
                     </p>
                     <p>
                         <label>Approved reviews:</label>{' '}

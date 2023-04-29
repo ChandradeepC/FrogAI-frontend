@@ -13,7 +13,7 @@
 
 .left-column {
   flex-basis: 50%;
-  min-width: 30rem;
+  min-width: 32rem;
   padding: 0 1rem;
 }
 
@@ -82,6 +82,23 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: left;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+  margin-left:1rem;
+}
+
+.toggle-container input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
+.toggle {
+  font-size: 1.25rem;
+  margin-left: 0.5rem;
 }
 
 @media (max-width: 100rem) {

@@ -55,7 +55,8 @@ select:focus {
   margin-bottom: 15px;
   color: red;
   font-size: 1rem;
-  max-width: 30rem;
+  max-width: 27rem;
+
 }
 
 @media (prefers-color-scheme: dark) {
