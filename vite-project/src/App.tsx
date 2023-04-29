@@ -194,6 +194,7 @@ const App = () => {
                         comp={comp}
                         text={text}
                         media={media}
+                        mode={mode}
                     />
                 </div>
             </div>

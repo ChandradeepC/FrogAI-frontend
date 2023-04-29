@@ -23,6 +23,7 @@ interface Props {
     comp: string;
     text: string;
     media: string;
+    mode: string;
 }
 
 interface Monitor {
@@ -60,7 +61,8 @@ const RecommendationForm: React.FC<Props> = ({
     casual,
     comp,
     text,
-    media
+    media,
+    mode
 }) => {
     const [monitorRecommendations, setMonitorRecommendations] = useState<
         Monitor[]
@@ -84,7 +86,8 @@ const RecommendationForm: React.FC<Props> = ({
             res,
             minRR,
             panel,
-            backlight
+            backlight,
+            mode
         };
 
         fetch('http://127.0.0.1:5000/api/monitor-recommendations', {
