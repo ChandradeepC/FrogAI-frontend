@@ -1,9 +1,10 @@
 .form-container {
-  background-color: #1c1c1c;
+  background-color: #f1f1f1;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  color: white;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
+  border: 2px solid #ccc;
+  color: rgb(0, 0, 0);
   font-size: 14px;
   width: flex;
   align-items: left;
@@ -55,4 +56,12 @@ select:focus {
   color: red;
   font-size: 1.5rem;
   max-width: 30rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .form-container {
+    color: white;
+    background-color: #161b22;
+    border: 1px solid #777777;
+  }
 }

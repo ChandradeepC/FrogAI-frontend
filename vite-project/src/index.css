@@ -5,7 +5,7 @@
   
   color-scheme: light dark;
   color: #222;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -69,7 +69,7 @@
   @media (prefers-color-scheme: dark) {
   :root {
   color: rgba(255, 255, 255, 0.87);
-  background-color: #111;
+  background-color: #0d1117;
   }
   a {
   color: #e84393;

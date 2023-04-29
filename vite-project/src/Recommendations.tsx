@@ -122,20 +122,36 @@ const RecommendationForm: React.FC<Props> = ({
                         <span>{monitor.name}</span>
                         <span className="cost">${monitor.cost.toFixed(0)}</span>
                     </h3>
-                    <p>Resolution: {monitor.resolution}</p>
-                    <p>Refresh rate: {monitor.refreshRate} Hz</p>
-                    <p>Panel: {monitor.panel}</p>
-                    <p>Size: {monitor.size}"</p>
+                    <p>
+                        <label>Resolution:</label>{' '}
+                        <span>{monitor.resolution}</span>
+                    </p>
+                    <p>
+                        <label>Refresh rate:</label>{' '}
+                        <span>{monitor.refreshRate} Hz</span>
+                    </p>
+                    <p>
+                        <label>Panel:</label> <span>{monitor.panel}</span>
+                    </p>
+                    <p>
+                        <label>Size:</label> <span>{monitor.size}"</span>
+                    </p>
                     {/* <p>Minimum GPU: {monitor.minGpu}</p> */}
                     {monitor.specialFeatures && (
-                        <div>
-                            <p>Notes: {monitor.specialFeatures}</p>
-                        </div>
+                        <p>
+                            <label>Notes:</label>{' '}
+                            <span>{monitor.specialFeatures}</span>
+                        </p>
                     )}
-                    <p>Curved: {monitor.curve}</p>
-                    <p>Aspect ratio: {monitor.aspectRatio}</p>
                     <p>
-                        Approved reviews:{' '}
+                        <label>Curved:</label> <span>{monitor.curve}</span>
+                    </p>
+                    <p>
+                        <label>Aspect ratio:</label>{' '}
+                        <span>{monitor.aspectRatio}</span>
+                    </p>
+                    <p>
+                        <label>Approved reviews:</label>{' '}
                         {monitor.reviews.length > 0 ? (
                             monitor.reviews.map((reviewUrl) => (
                                 <div key={reviewUrl}>
