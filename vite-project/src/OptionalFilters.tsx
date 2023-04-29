@@ -39,8 +39,9 @@ const OptionalFilterForm: React.FC<Props> = ({
                 >
                     <option value="nopref">No preference</option>
                     <option value="wide">Wide</option>
-                    <option value="ultrawide">Ultra Wide</option>
-                    <option value="superultrawide">Super Ultra Wide</option>
+                    <option value="ultrawide">Ultrawide</option>
+                    <option value="superultrawide">Super Ultrawide</option>
+                    <option value="tall">Tall</option>
                 </select>
             </div>
             <div className="field">
