@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import frogaiLogo from './assets/frogai.jpg';
-import pepeLogo from './assets/pepe.png';
 import './App.css';
 import DeviceAndBudgetForm from './DeviceAndBudget';
 import AdvancedForm from './Advanced';
@@ -33,6 +32,7 @@ const App = () => {
     const [hdr, setHdr] = useState<string>('nopref');
     const [backlight, setBacklight] = useState<string>('nopref');
     const [mode, setMode] = useState<string>('basic');
+    const [country, setCountry] = useState<string>('US');
 
     const handleInputChange = (
         event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
@@ -140,6 +140,9 @@ const App = () => {
             case 'grade':
                 setGrade(value);
                 break;
+            case 'country':
+                setCountry(value);
+                break;
             default:
                 break;
         }
@@ -171,6 +174,7 @@ const App = () => {
                         mac={mac}
                         console={console}
                         budget={budget}
+                        country={country}
                         handleInputChange={handleInputChange}
                     />
                     <div className="toggle-container">

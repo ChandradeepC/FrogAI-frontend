@@ -6,6 +6,7 @@ interface Props {
     mac: string;
     console: string;
     budget: number;
+    country: string;
     handleInputChange: (
         event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
     ) => void;
@@ -16,6 +17,7 @@ const DeviceAndBudgetForm: React.FC<Props> = ({
     mac,
     console,
     budget,
+    country,
     handleInputChange
 }) => {
     let gpus: string[] = [
@@ -95,6 +97,17 @@ const DeviceAndBudgetForm: React.FC<Props> = ({
     return (
         <div className="form-container">
             <h2>Platform and budget</h2>
+            <div className="field">
+                <label htmlFor="country">Location:</label>
+                <select
+                    id="country"
+                    name="country"
+                    value={country}
+                    onChange={handleInputChange}
+                >
+                    <option value="US">US</option>
+                </select>
+            </div>
             <div className="field">
                 <label htmlFor="pc-gpu">Do you have a PC?</label>
                 <select

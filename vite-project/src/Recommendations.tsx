@@ -43,7 +43,7 @@ interface Monitor {
     aspectRatio: string;
     adobeRgb: string;
     hdr: string;
-    reviews: string[];
+    reviews: string[][];
 }
 
 const RecommendationForm: React.FC<Props> = ({
@@ -148,10 +148,8 @@ const RecommendationForm: React.FC<Props> = ({
                 <div>
                     <div className="monitor-box">
                         <h3>
-                            <span>
-                                Calibrite ColorChecker Display (Pro/Plus)
-                            </span>
-                            <span className="cost"> $170/280/320</span>
+                            <span>Calibrite ColorChecker</span>
+                            <span className="cost"> $170-320</span>
                         </h3>
                         <p>
                             <label>Display:</label> slower; upto 1000 nits
@@ -167,7 +165,7 @@ const RecommendationForm: React.FC<Props> = ({
                             2000 nits<span></span>
                         </p>
                         <p>
-                            <label>Calibration guide:</label>{' '}
+                            <label></label>{' '}
                             <a
                                 href={
                                     'https://www.youtube.com/watch?v=f2nVNxx1IHo'
@@ -175,7 +173,7 @@ const RecommendationForm: React.FC<Props> = ({
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                {'https://www.youtube.com/watch?v=f2nVNxx1IHo'}
+                                Calibration guide
                             </a>
                         </p>
                     </div>
@@ -232,25 +230,22 @@ const RecommendationForm: React.FC<Props> = ({
                             <span>{monitor.specialFeatures}</span>
                         </p>
                     )}
-                    <p>
-                        <label>Approved reviews:</label>{' '}
-                        {monitor.reviews.length > 0 ? (
-                            monitor.reviews.map((reviewUrl) => (
-                                <div key={reviewUrl}>
-                                    &#8226;&nbsp;{' '}
-                                    <a
-                                        href={reviewUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        {reviewUrl}
-                                    </a>
-                                </div>
-                            ))
-                        ) : (
-                            <span>None yet</span>
-                        )}
-                    </p>
+                    {monitor.reviews[0][0] !== 'no' && (
+                        <p>
+                            <label>Reviews:</label>{' '}
+                            {monitor.reviews.map((reviewUrl) => (
+                                // <div key={reviewUrl[0]}>
+                                <a
+                                    href={reviewUrl[1]}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {reviewUrl[0]}&nbsp;&nbsp;&nbsp;
+                                </a>
+                                // {</div> }
+                            ))}
+                        </p>
+                    )}
                 </div>
             ))}
         </div>
