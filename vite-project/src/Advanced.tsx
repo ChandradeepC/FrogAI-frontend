@@ -52,7 +52,7 @@ const AdvancedForm: React.FC<Props> = ({
                 </select>
             </div>
             <div className="field">
-                <label htmlFor="sharp">Sharpness:</label>
+                <label htmlFor="sharp">Resolution:</label>
                 <select
                     id="sharp"
                     name="sharp"

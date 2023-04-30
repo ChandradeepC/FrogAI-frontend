@@ -10,6 +10,9 @@ interface Props {
     panel: string;
     backlight: string;
     hdr: string;
+    finish: string;
+    calibrated: string;
+    hub: string;
     handleInputChange: (
         event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
     ) => void;
@@ -24,6 +27,9 @@ const OptionalFilterForm: React.FC<Props> = ({
     panel,
     backlight,
     hdr,
+    finish,
+    calibrated,
+    hub,
     handleInputChange
 }) => {
     return (
@@ -38,10 +44,10 @@ const OptionalFilterForm: React.FC<Props> = ({
                     onChange={handleInputChange}
                 >
                     <option value="nopref">No preference</option>
-                    <option value="wide">Wide</option>
-                    <option value="ultrawide">Ultrawide</option>
-                    <option value="superultrawide">Super Ultrawide</option>
-                    <option value="tall">Tall</option>
+                    <option value="Wide">Wide</option>
+                    <option value="Ultrawide">Ultrawide</option>
+                    <option value="Superultrawide">Super Ultrawide</option>
+                    <option value="Tall">Tall</option>
                 </select>
             </div>
             <div className="field">
@@ -53,8 +59,8 @@ const OptionalFilterForm: React.FC<Props> = ({
                     onChange={handleInputChange}
                 >
                     <option value="nopref">No preference</option>
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
                 </select>
             </div>
             <div className="field">
@@ -84,15 +90,15 @@ const OptionalFilterForm: React.FC<Props> = ({
                     onChange={handleInputChange}
                 >
                     <option value="nopref">No preference</option>
-                    <option value="5120x1440p">5120x1440p (UWDQHD)</option>
-                    <option value="2560x1440p">2560x1440p (WQHD)</option>
-                    <option value="2560x1080p">2560x1080p (UWFHD)</option>
-                    <option value="1920x1080p">1920x1080p (FHD)</option>
-                    <option value="3440x1440p">3440x1440p (UWQHD)</option>
-                    <option value="2560x1080p">2560x1080p</option>
-                    <option value="3840x2160p">3840x2160p (UHD 4K)</option>
-                    <option value="1920x1200p">1920x1200p</option>
-                    <option value="3840x1600p">3840x1600p</option>
+                    <option value="5120x1440">5120x1440</option>
+                    <option value="2560x1440">2560x1440</option>
+                    <option value="2560x1080">2560x1080</option>
+                    <option value="1920x1080">1920x1080</option>
+                    <option value="3440x1440">3440x1440</option>
+                    <option value="2560x1080">2560x1080</option>
+                    <option value="3840x2160">3840x2160</option>
+                    <option value="1920x1200">1920x1200</option>
+                    <option value="3840x1600">3840x1600</option>
                 </select>
             </div>
             <div className="field">
@@ -137,7 +143,7 @@ const OptionalFilterForm: React.FC<Props> = ({
                     onChange={handleInputChange}
                 >
                     <option value="nopref">No preference</option>
-                    <option value="miniLED">MiniLED</option>
+                    <option value="MiniLED">MiniLED</option>
                     <option value="FALD">FALD</option>
                 </select>
             </div>
@@ -150,8 +156,44 @@ const OptionalFilterForm: React.FC<Props> = ({
                     onChange={handleInputChange}
                 >
                     <option value="nopref">No preference</option>
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+            <div className="field">
+                <label htmlFor="finish">Finish: </label>
+                <select
+                    id="finish"
+                    name="finish"
+                    value={finish}
+                    onChange={handleInputChange}
+                >
+                    <option value="nopref">No preference</option>
+                    <option value="glossy">Glossy</option>
+                </select>
+            </div>
+            <div className="field">
+                <label htmlFor="hub">Type-C Hub: </label>
+                <select
+                    id="hub"
+                    name="hub"
+                    value={hub}
+                    onChange={handleInputChange}
+                >
+                    <option value="nopref">No preference</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+            <div className="field">
+                <label htmlFor="calibrated">Factory calibration: </label>
+                <select
+                    id="calibrated"
+                    name="calibrated"
+                    value={calibrated}
+                    onChange={handleInputChange}
+                >
+                    <option value="nopref">No preference</option>
+                    <option value="Yes">Yes</option>
                 </select>
             </div>
         </div>

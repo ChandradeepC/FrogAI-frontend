@@ -12,17 +12,18 @@
 }
 
 .left-column {
-  flex-basis: 50%;
-  max-width: 34rem;
-  min-width: 34rem;
+  /* flex-basis: 30%; */
+  max-width: 35rem;
+  min-width: 35rem;
   padding: 0 1rem;
 }
 
 .right-column {
-  flex-basis: 50%;
+  /* flex-basis: 70%; */
   padding: 0 1rem;
-  max-width: 34rem;
-  margin-left: 2rem;
+  max-width: 47rem;
+  min-width: 47rem;
+  margin-left: 5rem;
 }
 
 .frogai-heading {
@@ -51,7 +52,7 @@
   left: 0;
   width: 100%;
   height: 6rem;
-  background-color: #f4f4f4;
+  background-color: #161b22;
   z-index: -1;
   box-shadow: none;
 }
@@ -71,14 +72,27 @@
     object-fit: cover;
     border-radius: 50%;
     margin-right: 1rem;
-    border: 5px solid #ccc
+    border: 5px solid #727272
 }
 
 .header {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2rem;
-    font-weight: lighter;
+    font-weight: bolder;
     text-shadow: none;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+}
+
+.tagline {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  color: #999;
 }
 
 .wrapper {
@@ -90,34 +104,93 @@
 
 .toggle-container {
   display: flex;
-  align-items: left;
-  margin-top: -1rem;
+  align-items: center;
+  margin-top: -0.5rem;
   margin-bottom: 1.5rem;
   margin-left:1rem;
 }
 
-.toggle-container input[type="checkbox"] {
+/* .toggle-container input[type="checkbox"] {
   transform: scale(1.5);
+
+} */
+
+/* .toggle {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+} */
+
+/* .toggle-container {
+  display: inline-block;
+  position: relative;
+  margin-right: 20px;
+} */
+
+.toggle input[type="checkbox"] {
+  display: none;
 }
 
-.toggle {
-  font-size: 1.25rem;
-  margin-left: 0.5rem;
+/* Style the toggle switch */
+.toggle .switch {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
+
+/* Style the switch knob */
+.toggle .knob {
+  display: inline-block;
+  position: absolute;
+  top: 2.4px;
+  left: 2.5px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  /* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
+  transition: left 0.3s;
+}
+
+/* Change the background color of the switch when the checkbox is checked */
+.toggle input[type="checkbox"]:checked + .switch {
+  background-color: #e84393;
+}
+
+/* Move the switch knob to the right when the checkbox is checked */
+.toggle input[type="checkbox"]:checked + .switch .knob {
+  left: 27px;
+}
+
+.toggle-inner {
+  display: block;
+}
+
+.toggle-text {
+  position: relative;
+  bottom: 0.75rem;
+  font-size: 1rem;
+  margin-left: 1rem;
+  padding-bottom: 2rem;
+}
+
 
 @media (max-width: 70rem) {
-  .forms-container {
+/* .forms-container {
     flex-direction: column;
     align-items: center;
-  }
+  } */
   .left-column {
     min-width: auto; 
-    width: 100%;
+    width: auto;
   }
   .right-column {
-    margin-top: 50px;
+    margin-top: 0px;
     min-width: auto; 
-    width: 100%;
     margin-left: 0px;
   }
 }
@@ -127,6 +200,6 @@
     background-color: #161b22;
   }
   .frogai-logo {
-    border: 5px solid #434343
+    border: 5px solid #434343;
   }
 }

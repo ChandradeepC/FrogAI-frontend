@@ -13,9 +13,9 @@ const App = () => {
     const [mac, setMac] = useState<string>('no');
     const [console, setConsole] = useState<string>('');
     const [budget, setBudget] = useState<number>(0);
-    const [motion, setMotion] = useState<string>('not');
-    const [pq, setPq] = useState<string>('not');
-    const [sharp, setSharp] = useState<string>('not');
+    const [motion, setMotion] = useState<string>('some');
+    const [pq, setPq] = useState<string>('some');
+    const [sharp, setSharp] = useState<string>('some');
     const [casual, setCasual] = useState<string>('not');
     const [comp, setComp] = useState<string>('not');
     const [text, setText] = useState<string>('not');
@@ -33,12 +33,24 @@ const App = () => {
     const [backlight, setBacklight] = useState<string>('nopref');
     const [mode, setMode] = useState<string>('basic');
     const [country, setCountry] = useState<string>('US');
+    const [finish, setFinish] = useState<string>('nopref');
+    const [hub, setHub] = useState<string>('nopref');
+    const [calibrated, setCalibrated] = useState<string>('nopref');
 
     const handleInputChange = (
         event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
     ) => {
         const { name, value } = event.target;
         switch (name) {
+            case 'finish':
+                setFinish(value);
+                break;
+            case 'hub':
+                setHub(value);
+                break;
+            case 'calibrated':
+                setCalibrated(value);
+                break;
             case 'hdr':
                 setHdr(value);
                 break;
@@ -162,7 +174,10 @@ const App = () => {
                         alt="FrogAI Logo"
                         className="frogai-logo"
                     />
-                    <h1 className="header">FrogAI</h1>
+                    <div className="logo-text">
+                        <h1 className="header">FrogAI</h1>
+                        <p className="tagline">Monitor recommendations</p>
+                    </div>
                 </div>
             </div>
 
@@ -178,13 +193,16 @@ const App = () => {
                         handleInputChange={handleInputChange}
                     />
                     <div className="toggle-container">
-                        <label>
+                        <label className="toggle">
                             <input
                                 type="checkbox"
                                 checked={mode === 'advanced'}
                                 onChange={handleModeToggle}
                             />
-                            <span className="toggle">Advanced Mode</span>
+                            <span className="switch">
+                                <span className="knob"></span>
+                            </span>
+                            <span className="toggle-text">Advanced Mode</span>
                         </label>
                     </div>
                     {mode === 'basic' ? (
@@ -221,6 +239,9 @@ const App = () => {
                         panel={panel}
                         backlight={backlight}
                         hdr={hdr}
+                        finish={finish}
+                        calibrated={calibrated}
+                        hub={hub}
                         handleInputChange={handleInputChange}
                     />
                 </div>
@@ -249,6 +270,9 @@ const App = () => {
                         media={media}
                         mode={mode}
                         hdr={hdr}
+                        finish={finish}
+                        calibrated={calibrated}
+                        hub={hub}
                     />
                 </div>
             </div>

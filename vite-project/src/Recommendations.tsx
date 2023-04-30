@@ -25,6 +25,9 @@ interface Props {
     media: string;
     mode: string;
     hdr: string;
+    finish: string;
+    calibrated: string;
+    hub: string;
 }
 
 interface Monitor {
@@ -69,7 +72,10 @@ const RecommendationForm: React.FC<Props> = ({
     text,
     media,
     mode,
-    hdr
+    hdr,
+    finish,
+    calibrated,
+    hub
 }) => {
     const [monitorRecommendations, setMonitorRecommendations] = useState<
         Monitor[]
@@ -99,7 +105,10 @@ const RecommendationForm: React.FC<Props> = ({
             media,
             text,
             mode,
-            hdr
+            hdr,
+            finish,
+            calibrated,
+            hub
         };
 
         fetch('http://127.0.0.1:5000/api/monitor-recommendations', {
@@ -139,7 +148,10 @@ const RecommendationForm: React.FC<Props> = ({
         comp,
         text,
         media,
-        hdr
+        hdr,
+        finish,
+        calibrated,
+        hub
     ]);
 
     return (
@@ -148,22 +160,23 @@ const RecommendationForm: React.FC<Props> = ({
                 <div>
                     <div className="monitor-box">
                         <h3>
-                            <span>Calibrite ColorChecker</span>
+                            <span>Calibrite ColorChecker Display</span>
                             <span className="cost"> $170-320</span>
                         </h3>
-                        <p>
-                            <label>Display:</label> slower; upto 1000 nits
-                            <span></span>
-                        </p>
-                        <p>
-                            <label>Display Pro retail:</label> faster; upto 1000
-                            nits
-                            <span></span>
-                        </p>
-                        <p>
-                            <label>Display Pro OEM / Plus:</label> faster; upto
-                            2000 nits<span></span>
-                        </p>
+                        <div className="meters">
+                            <p>
+                                <label>Base:</label> Slower; upto 1000nits
+                                <span></span>
+                            </p>
+                            <p>
+                                <label>Pro Retail:</label> Faster; upto 1000nits
+                                <span></span>
+                            </p>
+                            <p>
+                                <label>Plus/Pro OEM:</label> upto 2000 nits
+                                <span></span>
+                            </p>
+                        </div>
                         <p>
                             <label></label>{' '}
                             <a
@@ -226,13 +239,13 @@ const RecommendationForm: React.FC<Props> = ({
                     </div>
                     {monitor.specialFeatures !== 'no' && (
                         <p>
-                            <label>Notes:</label>{' '}
+                            <label></label>{' '}
                             <span>{monitor.specialFeatures}</span>
                         </p>
                     )}
                     {monitor.reviews[0][0] !== 'no' && (
                         <p>
-                            <label>Reviews:</label>{' '}
+                            <label></label>{' '}
                             {monitor.reviews.map((reviewUrl) => (
                                 // <div key={reviewUrl[0]}>
                                 <a
@@ -240,7 +253,7 @@ const RecommendationForm: React.FC<Props> = ({
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    {reviewUrl[0]}&nbsp;&nbsp;&nbsp;
+                                    {reviewUrl[0]}&nbsp;&nbsp;
                                 </a>
                                 // {</div> }
                             ))}

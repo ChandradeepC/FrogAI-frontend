@@ -1,4 +1,6 @@
 .monitor-box {
+  display: flex;
+  flex-direction: column;
   background-color: #fafafa;
   border-radius: 10px;
   padding: 20px;
@@ -21,7 +23,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
   }
   
 .monitor-box p {
@@ -30,7 +34,7 @@
   }
 
 .monitor-box label {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .monitor-box button {
@@ -52,9 +56,13 @@
     border-bottom: none;
   }
 
-
 .cost {
   text-align: right;
+}
+
+.meters {
+  display: flex;
+  justify-content: space-between;
 }
 
 .medium-plus{
@@ -74,6 +82,7 @@
 
 .grid-item {
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
 }
 

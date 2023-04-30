@@ -137,7 +137,7 @@ const DeviceAndBudgetForm: React.FC<Props> = ({
                 </select>
             </div>
             <div className="field">
-                <label htmlFor="console">Do you have a console?: </label>
+                <label htmlFor="console">Do you have a console?</label>
                 <select
                     id="console"
                     name="console"
@@ -159,6 +159,7 @@ const DeviceAndBudgetForm: React.FC<Props> = ({
                     name="budget"
                     value={budget}
                     onChange={handleInputChange}
+                    step="50"
                 />
             </div>
         </div>
