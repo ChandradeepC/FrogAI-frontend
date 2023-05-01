@@ -58,7 +58,7 @@
 }
 
 .brand{
-  /* position: fixed; */
+  position: relative;
   display: flex;
   height: 9rem;
   padding: 0 2rem;

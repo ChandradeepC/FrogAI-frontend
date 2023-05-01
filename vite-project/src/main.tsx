@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import './index.css';
+import AppRouter from './AppRouter';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         <div>
-            <App />
+            <AppRouter />
         </div>
     </React.StrictMode>
 );

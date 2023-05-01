@@ -86,6 +86,22 @@
   flex-direction: row;
 }
 
+.premessage-container {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; 
+}
+
+.premessage {
+  color: #a2a2a2;
+  font-size: 1rem;
+  border: 1px solid #a2a2a2;
+  border-radius: 7px;
+  padding: 0.5rem;
+}
+
 @media (prefers-color-scheme: dark) {
   .monitor-box {
     color: white;
