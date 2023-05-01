@@ -23,6 +23,7 @@ const App = () => {
     const [print, setPrint] = useState<string>('no');
     const [edit, setEdit] = useState<string>('no');
     const [grade, setGrade] = useState<string>('no');
+    const [esports, setEsports] = useState<string>('no');
     const [aspect, setAspect] = useState<string>('nopref');
     const [curve, setCurve] = useState<string>('nopref');
     const [size, setSize] = useState<string>('nopref');
@@ -42,6 +43,9 @@ const App = () => {
     ) => {
         const { name, value } = event.target;
         switch (name) {
+            case 'esports':
+                setEsports(value);
+                break;
             case 'finish':
                 setFinish(value);
                 break;
@@ -228,6 +232,7 @@ const App = () => {
                         console={console}
                         mac={mac}
                         pcGpu={pcGpu}
+                        esports={esports}
                         handleInputChange={handleInputChange}
                     />
                     <OptionalFilterForm
@@ -254,6 +259,7 @@ const App = () => {
                         motion={motion}
                         pq={pq}
                         sharp={sharp}
+                        esports={esports}
                         print={print}
                         edit={edit}
                         grade={grade}

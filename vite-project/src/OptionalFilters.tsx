@@ -91,11 +91,12 @@ const OptionalFilterForm: React.FC<Props> = ({
                 >
                     <option value="nopref">No preference</option>
                     <option value="5120x1440">5120x1440</option>
+                    <option value="5120x2880">5120x2880</option>
+                    <option value="6016x3384">6016x3384</option>
+                    <option value="2560x2880">2560x2880</option>
                     <option value="2560x1440">2560x1440</option>
-                    <option value="2560x1080">2560x1080</option>
                     <option value="1920x1080">1920x1080</option>
                     <option value="3440x1440">3440x1440</option>
-                    <option value="2560x1080">2560x1080</option>
                     <option value="3840x2160">3840x2160</option>
                     <option value="1920x1200">1920x1200</option>
                     <option value="3840x1600">3840x1600</option>

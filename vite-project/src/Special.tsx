@@ -8,6 +8,7 @@ interface Props {
     console: string;
     mac: string;
     pcGpu: string;
+    esports: string;
     handleInputChange: (
         event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
     ) => void;
@@ -20,6 +21,7 @@ const SpecialForm: React.FC<Props> = ({
     console,
     mac,
     pcGpu,
+    esports,
     handleInputChange
 }) => {
     return (
@@ -30,10 +32,24 @@ const SpecialForm: React.FC<Props> = ({
                 mac === 'no' &&
                 pcGpu === '' && (
                     <div className="warning">
-                        You cannot use a console for professional work. Select a
-                        mac or pc if you want to do professional work.
+                        You cannot use a console for professional work or
+                        professional esports. Select a mac or pc if you want to
+                        do professional work and a pc if you want to play
+                        professional esports.
                     </div>
                 )}
+            <div className="field">
+                <label htmlFor="esports">Professional esports:</label>
+                <select
+                    id="esports"
+                    name="esports"
+                    value={esports}
+                    onChange={handleInputChange}
+                >
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
             <div className="field">
                 <label htmlFor="print">Print photo editing:</label>
                 <select
@@ -41,7 +57,6 @@ const SpecialForm: React.FC<Props> = ({
                     name="print"
                     value={print}
                     onChange={handleInputChange}
-                    // disabled={console !== 'no' && console !== ''}
                 >
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
@@ -56,7 +71,6 @@ const SpecialForm: React.FC<Props> = ({
                     name="edit"
                     value={edit}
                     onChange={handleInputChange}
-                    // disabled={console !== 'no' && console !== ''}
                 >
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
@@ -71,7 +85,6 @@ const SpecialForm: React.FC<Props> = ({
                     name="grade"
                     value={grade}
                     onChange={handleInputChange}
-                    // disabled={console !== 'no' && console !== ''}
                 >
                     <option value="no">No</option>
                     <option value="yes">Yes</option>

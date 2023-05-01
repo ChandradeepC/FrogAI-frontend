@@ -9,6 +9,7 @@ interface Props {
     motion: string;
     pq: string;
     sharp: string;
+    esports: string;
     print: string;
     edit: string;
     grade: string;
@@ -57,6 +58,7 @@ const RecommendationForm: React.FC<Props> = ({
     motion,
     pq,
     sharp,
+    esports,
     print,
     edit,
     grade,
@@ -90,6 +92,7 @@ const RecommendationForm: React.FC<Props> = ({
             motion,
             pq,
             sharp,
+            esports,
             print,
             edit,
             grade,
@@ -133,6 +136,7 @@ const RecommendationForm: React.FC<Props> = ({
         motion,
         pq,
         sharp,
+        esports,
         print,
         edit,
         grade,
@@ -267,9 +271,7 @@ const RecommendationForm: React.FC<Props> = ({
                 ))
             ) : (
                 <div className="premessage-container">
-                    <div className="premessage">
-                        Recommendations will appear here
-                    </div>
+                    <div className="premessage">No such monitors exist yet</div>
                 </div>
             )}
         </div>
