@@ -9,21 +9,32 @@ import RecommendationForm from './Recommendations';
 import UseCasesForm from './UseCases';
 
 const App = () => {
+    const [country, setCountry] = useState<string>('US');
     const [pcGpu, setPcGpu] = useState<string>('');
     const [mac, setMac] = useState<string>('no');
     const [console, setConsole] = useState<string>('');
     const [budget, setBudget] = useState<number>(0);
-    const [motion, setMotion] = useState<string>('some');
-    const [pq, setPq] = useState<string>('some');
+    //-----------------------------------------------------------
+    const [mode, setMode] = useState<string>('basic');
+    //-----------------------------------------------------------
+    const [persistence, setPersistence] = useState<string>('some');
+    const [response, setResponse] = useState<string>('some');
+    const [contrast, setContrast] = useState<string>('some');
+    const [brightness, setBrightness] = useState<string>('some');
+    const [volume, setVolume] = useState<string>('some');
     const [sharp, setSharp] = useState<string>('some');
+    const [subpixel, setSubpixel] = useState<string>('some');
+    //-----------------------------------------------------------
     const [casual, setCasual] = useState<string>('not');
     const [comp, setComp] = useState<string>('not');
     const [text, setText] = useState<string>('not');
     const [media, setMedia] = useState<string>('not');
+    //-----------------------------------------------------------
     const [print, setPrint] = useState<string>('no');
     const [edit, setEdit] = useState<string>('no');
     const [grade, setGrade] = useState<string>('no');
     const [esports, setEsports] = useState<string>('no');
+    //-----------------------------------------------------------
     const [aspect, setAspect] = useState<string>('nopref');
     const [curve, setCurve] = useState<string>('nopref');
     const [size, setSize] = useState<string>('nopref');
@@ -32,8 +43,6 @@ const App = () => {
     const [panel, setPanel] = useState<string>('nopref');
     const [hdr, setHdr] = useState<string>('nopref');
     const [backlight, setBacklight] = useState<string>('nopref');
-    const [mode, setMode] = useState<string>('basic');
-    const [country, setCountry] = useState<string>('US');
     const [finish, setFinish] = useState<string>('nopref');
     const [hub, setHub] = useState<string>('nopref');
     const [calibrated, setCalibrated] = useState<string>('nopref');
@@ -43,23 +52,8 @@ const App = () => {
     ) => {
         const { name, value } = event.target;
         switch (name) {
-            case 'esports':
-                setEsports(value);
-                break;
-            case 'finish':
-                setFinish(value);
-                break;
-            case 'hub':
-                setHub(value);
-                break;
-            case 'calibrated':
-                setCalibrated(value);
-                break;
-            case 'hdr':
-                setHdr(value);
-                break;
-            case 'mode':
-                setMode(value);
+            case 'country':
+                setCountry(value);
                 break;
             case 'pc-gpu':
                 setPcGpu(value);
@@ -73,6 +67,11 @@ const App = () => {
             case 'budget':
                 setBudget(parseInt(value));
                 break;
+            //-----------------------------------------
+            case 'mode':
+                setMode(value);
+                break;
+            //-----------------------------------------
             case 'casual':
                 setCasual(value);
                 if (value === 'only') {
@@ -105,27 +104,99 @@ const App = () => {
                     setCasual('not');
                 }
                 break;
-            case 'motion':
-                setMotion(value);
+            //----------------------------------------
+            case 'persistence':
+                setPersistence(value);
                 if (value === 'only') {
-                    setPq('not');
+                    setResponse('not');
+                    setBrightness('not');
+                    setContrast('not');
+                    setVolume('not');
                     setSharp('not');
+                    setSubpixel('not');
                 }
                 break;
-            case 'pq':
-                setPq(value);
+            case 'response':
+                setResponse(value);
                 if (value === 'only') {
-                    setMotion('not');
+                    setPersistence('not');
+                    setBrightness('not');
+                    setContrast('not');
+                    setVolume('not');
                     setSharp('not');
+                    setSubpixel('not');
                 }
                 break;
+            case 'contrast':
+                setContrast(value);
+                if (value === 'only') {
+                    setResponse('not');
+                    setBrightness('not');
+                    setSharp('not');
+                    setVolume('not');
+                    setPersistence('not');
+                    setSubpixel('not');
+                }
+                break;
+            case 'brightness':
+                setBrightness(value);
+                if (value === 'only') {
+                    setResponse('not');
+                    setSharp('not');
+                    setContrast('not');
+                    setVolume('not');
+                    setPersistence('not');
+                    setSubpixel('not');
+                }
+                break;
+            case 'volume':
+                setVolume(value);
+                if (value === 'only') {
+                    setResponse('not');
+                    setBrightness('not');
+                    setContrast('not');
+                    setSharp('not');
+                    setPersistence('not');
+                    setSubpixel('not');
+                }
+                break;
+
             case 'sharp':
                 setSharp(value);
                 if (value === 'only') {
-                    setPq('not');
-                    setMotion('not');
+                    setResponse('not');
+                    setBrightness('not');
+                    setContrast('not');
+                    setVolume('not');
+                    setPersistence('not');
+                    setSubpixel('not');
                 }
                 break;
+            case 'subpixel':
+                setSubpixel(value);
+                if (value === 'only') {
+                    setResponse('not');
+                    setBrightness('not');
+                    setContrast('not');
+                    setSharp('not');
+                    setPersistence('not');
+                    setVolume('not');
+                }
+                break;
+            //--------------------------------------
+            case 'print':
+                setPrint(value);
+                break;
+            case 'edit':
+                setEdit(value);
+                break;
+            case 'grade':
+                setGrade(value);
+                break;
+            case 'esports':
+                setEsports(value);
+                break;
+            //-------------------------------------
             case 'aspect':
                 setAspect(value);
                 break;
@@ -147,17 +218,17 @@ const App = () => {
             case 'backlight':
                 setBacklight(value);
                 break;
-            case 'print':
-                setPrint(value);
+            case 'finish':
+                setFinish(value);
                 break;
-            case 'edit':
-                setEdit(value);
+            case 'hub':
+                setHub(value);
                 break;
-            case 'grade':
-                setGrade(value);
+            case 'calibrated':
+                setCalibrated(value);
                 break;
-            case 'country':
-                setCountry(value);
+            case 'hdr':
+                setHdr(value);
                 break;
             default:
                 break;
@@ -219,9 +290,13 @@ const App = () => {
                         />
                     ) : (
                         <AdvancedForm
-                            motion={motion}
-                            pq={pq}
+                            persistence={persistence}
+                            response={response}
+                            contrast={contrast}
+                            brightness={brightness}
+                            volume={volume}
                             sharp={sharp}
+                            subpixel={subpixel}
                             handleInputChange={handleInputChange}
                         />
                     )}
@@ -252,17 +327,32 @@ const App = () => {
                 </div>
                 <div className="right-column">
                     <RecommendationForm
+                        country={country}
                         pcGpu={pcGpu}
                         mac={mac}
                         consoles={console}
                         budget={budget}
-                        motion={motion}
-                        pq={pq}
+                        //---------------------
+                        mode={mode}
+                        //---------------------
+                        casual={casual}
+                        comp={comp}
+                        text={text}
+                        media={media}
+                        //---------------------
+                        persistence={persistence}
+                        response={response}
+                        contrast={contrast}
+                        brightness={brightness}
+                        volume={volume}
                         sharp={sharp}
+                        subpixel={subpixel}
+                        //---------------------
                         esports={esports}
                         print={print}
                         edit={edit}
                         grade={grade}
+                        //---------------------
                         aspect={aspect}
                         curve={curve}
                         size={size}
@@ -270,11 +360,6 @@ const App = () => {
                         minRR={minRR}
                         panel={panel}
                         backlight={backlight}
-                        casual={casual}
-                        comp={comp}
-                        text={text}
-                        media={media}
-                        mode={mode}
                         hdr={hdr}
                         finish={finish}
                         calibrated={calibrated}

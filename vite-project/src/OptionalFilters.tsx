@@ -71,7 +71,7 @@ const OptionalFilterForm: React.FC<Props> = ({
                     value={size}
                     onChange={handleInputChange}
                 >
-                    <option value="nopref">No Preference</option>
+                    <option value="nopref">No preference</option>
                     <option value="24">24"</option>
                     <option value="25">25"</option>
                     <option value="27">27"</option>

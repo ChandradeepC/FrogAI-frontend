@@ -2,13 +2,18 @@ import React, { useState, useEffect } from 'react';
 import './Recommendations.css';
 
 interface Props {
+    country: string;
     pcGpu: string;
     mac: string;
     consoles: string;
     budget: number;
-    motion: string;
-    pq: string;
+    persistence: string;
+    response: string;
+    contrast: string;
+    brightness: string;
+    volume: string;
     sharp: string;
+    subpixel: string;
     esports: string;
     print: string;
     edit: string;
@@ -33,9 +38,13 @@ interface Props {
 
 interface Monitor {
     name: string;
-    motion: string;
-    pq: string;
+    persistence: string;
+    response: string;
+    contrast: string;
+    brightness: string;
+    volume: string;
     sharp: string;
+    subpixel: string;
     resolution: string;
     refreshRate: number;
     panel: string;
@@ -51,13 +60,18 @@ interface Monitor {
 }
 
 const RecommendationForm: React.FC<Props> = ({
+    country,
     pcGpu,
     mac,
     consoles,
     budget,
-    motion,
-    pq,
+    persistence,
+    response,
+    contrast,
+    brightness,
+    volume,
     sharp,
+    subpixel,
     esports,
     print,
     edit,
@@ -85,13 +99,18 @@ const RecommendationForm: React.FC<Props> = ({
 
     useEffect(() => {
         const data = {
+            country,
             pcGpu,
             mac,
             consoles,
             budget,
-            motion,
-            pq,
+            persistence,
+            response,
+            contrast,
+            brightness,
+            volume,
             sharp,
+            subpixel,
             esports,
             print,
             edit,
@@ -129,13 +148,18 @@ const RecommendationForm: React.FC<Props> = ({
                 console.error(error);
             });
     }, [
+        country,
         pcGpu,
         mac,
         consoles,
         budget,
-        motion,
-        pq,
+        persistence,
+        response,
+        contrast,
+        brightness,
+        volume,
         sharp,
+        subpixel,
         esports,
         print,
         edit,
@@ -271,7 +295,9 @@ const RecommendationForm: React.FC<Props> = ({
                 ))
             ) : (
                 <div className="premessage-container">
-                    <div className="premessage">No such monitors exist yet</div>
+                    <div className="premessage">
+                        No such monitors exist or are worth recommending
+                    </div>
                 </div>
             )}
         </div>

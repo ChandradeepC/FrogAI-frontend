@@ -2,31 +2,46 @@ import React, { useState } from 'react';
 import './Component.css';
 
 interface Props {
-    motion: string;
-    pq: string;
+    persistence: string;
+    response: string;
+    contrast: string;
+    brightness: string;
+    volume: string;
     sharp: string;
+    subpixel: string;
     handleInputChange: (
         event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
     ) => void;
 }
 
 const AdvancedForm: React.FC<Props> = ({
-    motion,
-    pq,
+    persistence,
+    response,
+    contrast,
+    brightness,
+    volume,
     sharp,
+    subpixel,
     handleInputChange
 }) => {
     return (
         <div className="form-container">
-            <h2>Advanced requirements</h2>
+            <h2>Performance requirements</h2>
             <div className="field">
-                <label htmlFor="motion">Motion:</label>
+                <label htmlFor="persistence">Persistence blur:</label>
                 <select
-                    id="motion"
-                    name="motion"
-                    value={motion}
+                    id="persistence"
+                    name="persistence"
+                    value={persistence}
                     onChange={handleInputChange}
-                    disabled={pq === 'only' || sharp === 'only'}
+                    disabled={
+                        response === 'only' ||
+                        sharp === 'only' ||
+                        subpixel === 'only' ||
+                        contrast === 'only' ||
+                        brightness === 'only' ||
+                        volume === 'only'
+                    }
                 >
                     <option value="not">Don't care</option>
                     <option value="some">Nice to have</option>
@@ -36,13 +51,20 @@ const AdvancedForm: React.FC<Props> = ({
                 </select>
             </div>
             <div className="field">
-                <label htmlFor="pq">Picture quality:</label>
+                <label htmlFor="response">Response time:</label>
                 <select
-                    id="pq"
-                    name="pq"
-                    value={pq}
+                    id="response"
+                    name="response"
+                    value={response}
                     onChange={handleInputChange}
-                    disabled={motion === 'only' || sharp === 'only'}
+                    disabled={
+                        persistence === 'only' ||
+                        sharp === 'only' ||
+                        subpixel === 'only' ||
+                        contrast === 'only' ||
+                        brightness === 'only' ||
+                        volume === 'only'
+                    }
                 >
                     <option value="not">Don't care</option>
                     <option value="some">Nice to have</option>
@@ -52,13 +74,112 @@ const AdvancedForm: React.FC<Props> = ({
                 </select>
             </div>
             <div className="field">
-                <label htmlFor="sharp">Resolution:</label>
+                <label htmlFor="contrast">Contrast ratio:</label>
+                <select
+                    id="contrast"
+                    name="contrast"
+                    value={contrast}
+                    onChange={handleInputChange}
+                    disabled={
+                        response === 'only' ||
+                        sharp === 'only' ||
+                        subpixel === 'only' ||
+                        persistence === 'only' ||
+                        brightness === 'only' ||
+                        volume === 'only'
+                    }
+                >
+                    <option value="not">Don't care</option>
+                    <option value="some">Nice to have</option>
+                    <option value="imp">Important</option>
+                    <option value="very">Very Important</option>
+                    <option value="only">Only thing I care about</option>
+                </select>
+            </div>
+            <div className="field">
+                <label htmlFor="brightness">Brightness:</label>
+                <select
+                    id="birghtness"
+                    name="brightness"
+                    value={brightness}
+                    onChange={handleInputChange}
+                    disabled={
+                        response === 'only' ||
+                        sharp === 'only' ||
+                        subpixel === 'only' ||
+                        contrast === 'only' ||
+                        persistence === 'only' ||
+                        volume === 'only'
+                    }
+                >
+                    <option value="not">Don't care</option>
+                    <option value="some">Nice to have</option>
+                    <option value="imp">Important</option>
+                    <option value="very">Very Important</option>
+                    <option value="only">Only thing I care about</option>
+                </select>
+            </div>
+            <div className="field">
+                <label htmlFor="volume">Color volume:</label>
+                <select
+                    id="volume"
+                    name="volume"
+                    value={volume}
+                    onChange={handleInputChange}
+                    disabled={
+                        response === 'only' ||
+                        sharp === 'only' ||
+                        subpixel === 'only' ||
+                        contrast === 'only' ||
+                        brightness === 'only' ||
+                        persistence === 'only'
+                    }
+                >
+                    <option value="not">Don't care</option>
+                    <option value="some">Nice to have</option>
+                    <option value="imp">Important</option>
+                    <option value="very">Very Important</option>
+                    <option value="only">Only thing I care about</option>
+                </select>
+            </div>
+            <div className="field">
+                <label htmlFor="sharp">Image resolution:</label>
                 <select
                     id="sharp"
                     name="sharp"
                     value={sharp}
                     onChange={handleInputChange}
-                    disabled={motion === 'only' || pq === 'only'}
+                    disabled={
+                        response === 'only' ||
+                        persistence === 'only' ||
+                        subpixel === 'only' ||
+                        contrast === 'only' ||
+                        brightness === 'only' ||
+                        volume === 'only'
+                    }
+                >
+                    <option value="not">Don't care</option>
+                    <option value="some">Nice to have</option>
+                    <option value="imp">Important</option>
+                    <option value="very">Very Important</option>
+                    <option value="only">Only thing I care about</option>
+                </select>
+            </div>
+            <div className="field">
+                <label htmlFor="subpixel">Text quality:</label>
+                <select
+                    id="subpixel"
+                    name="subpixel"
+                    value={subpixel}
+                    onChange={handleInputChange}
+                    disabled={
+                        response === 'only' ||
+                        sharp === 'only' ||
+                        persistence === 'only' ||
+                        contrast === 'only' ||
+                        brightness === 'only' ||
+                        volume === 'only'
+                    }
                 >
                     <option value="not">Don't care</option>
                     <option value="some">Nice to have</option>
