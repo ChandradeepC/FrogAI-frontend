@@ -24,14 +24,15 @@ const LandingPage: React.FC = () => {
                 <h2>Trust FrogAI to find the perfect monitor for you.</h2>
                 <ul>
                     <li>
-                        Trained on thousands of conversations from r/monitors
-                        and Monitor Enthusiasts
+                        Trained on thousands of conversations in Monitor
+                        Enthusiasts
                     </li>
                     <li>
                         Monitors selected based on objective measurements from
                         multiple professional reviewers, enthusiast feedback,
                         frog pursuits and UFO tests
                     </li>
+                    <li>Aware of the flaws in every recommended monitor</li>
                     <li>No Samsung or Dough(Eve) bullshit</li>
                     <li>Attention to detail</li>
                 </ul>

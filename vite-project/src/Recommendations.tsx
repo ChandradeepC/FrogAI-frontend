@@ -230,6 +230,12 @@ const RecommendationForm: React.FC<Props> = ({
                                 ${monitor.cost.toFixed(0)}
                             </span>
                         </h3>
+                        {monitor.specialFeatures !== 'no' && (
+                            <p>
+                                <label></label>{' '}
+                                <span>{monitor.specialFeatures}</span>
+                            </p>
+                        )}
                         <div className="spec-grid">
                             <div className="grid-item">
                                 <p>
@@ -269,12 +275,6 @@ const RecommendationForm: React.FC<Props> = ({
                                 </p>
                             </div>
                         </div>
-                        {monitor.specialFeatures !== 'no' && (
-                            <p>
-                                <label></label>{' '}
-                                <span>{monitor.specialFeatures}</span>
-                            </p>
-                        )}
                         {monitor.reviews[0][0] !== 'no' && (
                             <p>
                                 <label></label>{' '}
