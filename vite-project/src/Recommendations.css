@@ -1,7 +1,8 @@
 .monitor-box {
   display: flex;
   flex-direction: column;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
+  background-color: #f3f3f3;
   border-radius: 10px;
   padding: 20px;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
@@ -92,6 +93,7 @@
   align-items: center;
   justify-content: center;
   height: 50vh; 
+  max-width: 32rem;
 }
 
 .premessage {

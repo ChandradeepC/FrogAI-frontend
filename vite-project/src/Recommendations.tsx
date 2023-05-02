@@ -233,7 +233,9 @@ const RecommendationForm: React.FC<Props> = ({
                         {monitor.specialFeatures !== 'no' && (
                             <p>
                                 <label></label>{' '}
-                                <span>{monitor.specialFeatures}</span>
+                                <span style={{ fontStyle: 'italic' }}>
+                                    {monitor.specialFeatures}
+                                </span>
                             </p>
                         )}
                         <div className="spec-grid">
@@ -296,7 +298,8 @@ const RecommendationForm: React.FC<Props> = ({
             ) : (
                 <div className="premessage-container">
                     <div className="premessage">
-                        No such monitors exist or are worth recommending
+                        No such monitors exist or are worth recommending. <br />{' '}
+                        Try removing some filters or increasing your budget.
                     </div>
                 </div>
             )}
