@@ -57,11 +57,34 @@
   box-shadow: none;
 }
 
+.footer-container {
+  display: flex;
+  position: relative; 
+  height: 3rem;
+  padding: 0 2rem;
+  margin-top: 10rem;
+  overflow: hidden;
+  border-top: 1px solid #d2d2d2;
+  /* z-index: 999; */
+  /* overscroll-behavior: contain; */
+}
+
+
+.bottom-text {
+  display: flex;
+  font-size: 1.1rem;
+  color: #727272;
+  /* margin-left: 30rem; */
+  margin-top: 0rem;
+}
+
+
 .brand{
   position: relative;
   display: flex;
   height: 9rem;
   padding: 0 2rem;
+  margin-left: -3rem;
   width: 100%;
   align-items: center;
 }
@@ -98,8 +121,9 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
+  align-items: center;
+  min-height: 100%;
 }
 
 .toggle-container {
@@ -202,4 +226,8 @@
   .frogai-logo {
     border: 5px solid #434343;
   }
+  .footer-container {
+    border-top: 1px solid #494949;
+  }
 }
+

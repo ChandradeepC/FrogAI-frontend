@@ -1,6 +1,6 @@
 .LandingPage {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
     background-color: #ffffff;
     flex-direction: column;
     align-items: center;
@@ -22,20 +22,27 @@
   
   /* List style */
   .LandingPage ul {
-    border: 1px solid #e4e4e4;
+    justify-content: space-between;
+    height: auto;
+    /* border: 1px solid #e4e4e4; */
     border-radius: 10px;
     list-style: disc;
     margin: 0;
     padding: 0 0 0 20px;
-    max-width: 40rem;
+    max-width: 60rem;
     margin-bottom: 5rem;
+    column-count: 2; /* split the list into two columns */
+  column-gap: 2rem;
   }
   
   /* List item style */
   .LandingPage li {
-    font-size: 1.2rem;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-size: 1.5rem;
     margin: 1rem;
-    margin-bottom: 1rem;
+    /* max-width: 30rem; */
+    margin-bottom: 2rem;
+    display: inline-block;
   }
 
   .LandingPage button {
@@ -69,9 +76,9 @@
       background-color:  #0d1117;
     }
 
-    .LandingPage ul {
+    /* .LandingPage ul {
       border: 1px solid #434343;
-    }
+    } */
 
     .LandingPage button {
       background-image: linear-gradient(to right, #e84393, #903b70);

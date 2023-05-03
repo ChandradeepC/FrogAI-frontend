@@ -240,56 +240,111 @@ const App = () => {
     };
 
     return (
-        <div className="wrapper">
-            <div className="header-container">
-                <div className="color-bar"></div>
-                <div className="brand">
-                    <img
-                        src={frogaiLogo}
-                        alt="FrogAI Logo"
-                        className="frogai-logo"
-                    />
-                    <div className="logo-text">
-                        <h1 className="header">FrogAI</h1>
-                        <p className="tagline">Monitor recommendations</p>
+        <div>
+            <div className="wrapper">
+                <div className="header-container">
+                    <div className="color-bar"></div>
+                    <div className="brand">
+                        <img
+                            src={frogaiLogo}
+                            alt="FrogAI Logo"
+                            className="frogai-logo"
+                        />
+                        <div className="logo-text">
+                            <h1 className="header">FrogAI</h1>
+                            <p className="tagline">
+                                Monitor recommendations v1.0
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="forms-container">
-                <div className="left-column">
-                    {/* <h2>Form:</h2> */}
-                    <DeviceAndBudgetForm
-                        pcGpu={pcGpu}
-                        mac={mac}
-                        console={console}
-                        budget={budget}
-                        country={country}
-                        handleInputChange={handleInputChange}
-                    />
-                    <div className="toggle-container">
-                        <label className="toggle">
-                            <input
-                                type="checkbox"
-                                checked={mode === 'advanced'}
-                                onChange={handleModeToggle}
+                <div className="forms-container">
+                    <div className="left-column">
+                        {/* <h2>Form:</h2> */}
+                        <DeviceAndBudgetForm
+                            pcGpu={pcGpu}
+                            mac={mac}
+                            console={console}
+                            budget={budget}
+                            country={country}
+                            handleInputChange={handleInputChange}
+                        />
+                        <div className="toggle-container">
+                            <label className="toggle">
+                                <input
+                                    type="checkbox"
+                                    checked={mode === 'advanced'}
+                                    onChange={handleModeToggle}
+                                />
+                                <span className="switch">
+                                    <span className="knob"></span>
+                                </span>
+                                <span className="toggle-text">
+                                    Advanced Mode
+                                </span>
+                            </label>
+                        </div>
+                        {mode === 'basic' ? (
+                            <UseCasesForm
+                                casual={casual}
+                                comp={comp}
+                                text={text}
+                                media={media}
+                                handleInputChange={handleInputChange}
                             />
-                            <span className="switch">
-                                <span className="knob"></span>
-                            </span>
-                            <span className="toggle-text">Advanced Mode</span>
-                        </label>
+                        ) : (
+                            <AdvancedForm
+                                persistence={persistence}
+                                response={response}
+                                contrast={contrast}
+                                brightness={brightness}
+                                volume={volume}
+                                sharp={sharp}
+                                subpixel={subpixel}
+                                handleInputChange={handleInputChange}
+                            />
+                        )}
+                        <SpecialForm
+                            print={print}
+                            edit={edit}
+                            grade={grade}
+                            console={console}
+                            mac={mac}
+                            pcGpu={pcGpu}
+                            esports={esports}
+                            handleInputChange={handleInputChange}
+                        />
+                        <OptionalFilterForm
+                            aspect={aspect}
+                            curve={curve}
+                            size={size}
+                            res={res}
+                            minRR={minRR}
+                            panel={panel}
+                            backlight={backlight}
+                            hdr={hdr}
+                            finish={finish}
+                            calibrated={calibrated}
+                            hub={hub}
+                            handleInputChange={handleInputChange}
+                        />
                     </div>
-                    {mode === 'basic' ? (
-                        <UseCasesForm
+                    <div className="right-column">
+                        <RecommendationForm
+                            country={country}
+                            pcGpu={pcGpu}
+                            mac={mac}
+                            consoles={console}
+                            budget={budget}
+                            //---------------------
+                            mode={mode}
+                            //---------------------
                             casual={casual}
                             comp={comp}
                             text={text}
                             media={media}
-                            handleInputChange={handleInputChange}
-                        />
-                    ) : (
-                        <AdvancedForm
+                            //---------------------
                             persistence={persistence}
                             response={response}
                             contrast={contrast}
@@ -297,74 +352,30 @@ const App = () => {
                             volume={volume}
                             sharp={sharp}
                             subpixel={subpixel}
-                            handleInputChange={handleInputChange}
+                            //---------------------
+                            esports={esports}
+                            print={print}
+                            edit={edit}
+                            grade={grade}
+                            //---------------------
+                            aspect={aspect}
+                            curve={curve}
+                            size={size}
+                            res={res}
+                            minRR={minRR}
+                            panel={panel}
+                            backlight={backlight}
+                            hdr={hdr}
+                            finish={finish}
+                            calibrated={calibrated}
+                            hub={hub}
                         />
-                    )}
-                    <SpecialForm
-                        print={print}
-                        edit={edit}
-                        grade={grade}
-                        console={console}
-                        mac={mac}
-                        pcGpu={pcGpu}
-                        esports={esports}
-                        handleInputChange={handleInputChange}
-                    />
-                    <OptionalFilterForm
-                        aspect={aspect}
-                        curve={curve}
-                        size={size}
-                        res={res}
-                        minRR={minRR}
-                        panel={panel}
-                        backlight={backlight}
-                        hdr={hdr}
-                        finish={finish}
-                        calibrated={calibrated}
-                        hub={hub}
-                        handleInputChange={handleInputChange}
-                    />
+                    </div>
                 </div>
-                <div className="right-column">
-                    <RecommendationForm
-                        country={country}
-                        pcGpu={pcGpu}
-                        mac={mac}
-                        consoles={console}
-                        budget={budget}
-                        //---------------------
-                        mode={mode}
-                        //---------------------
-                        casual={casual}
-                        comp={comp}
-                        text={text}
-                        media={media}
-                        //---------------------
-                        persistence={persistence}
-                        response={response}
-                        contrast={contrast}
-                        brightness={brightness}
-                        volume={volume}
-                        sharp={sharp}
-                        subpixel={subpixel}
-                        //---------------------
-                        esports={esports}
-                        print={print}
-                        edit={edit}
-                        grade={grade}
-                        //---------------------
-                        aspect={aspect}
-                        curve={curve}
-                        size={size}
-                        res={res}
-                        minRR={minRR}
-                        panel={panel}
-                        backlight={backlight}
-                        hdr={hdr}
-                        finish={finish}
-                        calibrated={calibrated}
-                        hub={hub}
-                    />
+            </div>
+            <div className="footer-container">
+                <div className="bottom-text">
+                    <p>© 2023 theNullCrown</p>
                 </div>
             </div>
         </div>
