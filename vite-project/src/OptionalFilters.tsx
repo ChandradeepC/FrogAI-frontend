@@ -38,6 +38,19 @@ const OptionalFilterForm: React.FC<Props> = ({
 
             <div className="field-grid">
                 <div className="field">
+                    <label htmlFor="hdr">HDR: </label>
+                    <select
+                        id="hdr"
+                        name="hdr"
+                        value={hdr}
+                        onChange={handleInputChange}
+                    >
+                        <option value="nopref">No preference</option>
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <div className="field">
                     <label htmlFor="aspect">Aspect ratio: </label>
                     <select
                         id="aspect"
@@ -148,19 +161,6 @@ const OptionalFilterForm: React.FC<Props> = ({
                         <option value="nopref">No preference</option>
                         <option value="MiniLED">MiniLED</option>
                         <option value="FALD">FALD</option>
-                    </select>
-                </div>
-                <div className="field">
-                    <label htmlFor="hdr">HDR: </label>
-                    <select
-                        id="hdr"
-                        name="hdr"
-                        value={hdr}
-                        onChange={handleInputChange}
-                    >
-                        <option value="nopref">No preference</option>
-                        <option value="No">No</option>
-                        <option value="Yes">Yes</option>
                     </select>
                 </div>
                 <div className="field">

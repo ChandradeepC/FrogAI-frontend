@@ -281,7 +281,7 @@ const App = () => {
                                     <span className="knob"></span>
                                 </span>
                                 <span className="toggle-text">
-                                    Advanced Mode
+                                    Enthusiast Mode
                                 </span>
                             </label>
                         </div>

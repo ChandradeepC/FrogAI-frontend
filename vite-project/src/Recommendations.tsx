@@ -188,7 +188,7 @@ const RecommendationForm: React.FC<Props> = ({
                 <div>
                     <div className="monitor-box colorimeter">
                         <h3>
-                            <span>Calibrite ColorChecker Display</span>
+                            <span>Calibrite ColorChecker</span>
                             <span className="cost"> $170-320</span>
                         </h3>
                         <div className="meters">
@@ -202,15 +202,17 @@ const RecommendationForm: React.FC<Props> = ({
                                 </p>
                             </div>
                             <p>
-                                <label>Base:</label> Slower; upto 1000nits
+                                <label>Display:</label> Slower; upto 1000nits
                                 <span></span>
                             </p>
                             <p>
-                                <label>Pro Retail:</label> Faster; upto 1000nits
+                                <label>Display Pro Retail:</label> Faster; upto
+                                1000nits
                                 <span></span>
                             </p>
                             <p>
-                                <label>Plus/Pro OEM:</label> upto 2000 nits
+                                <label>Display Plus/Pro OEM:</label> upto 2000
+                                nits
                                 <span></span>
                             </p>
                         </div>

@@ -24,7 +24,9 @@ const LandingPage: React.FC = () => {
                     </div>
                 </div>
                 <div className="LandingPage">
-                    <h2>Trust FrogAI to find the perfect monitor for you.</h2>
+                    <h2>
+                        FrogAI is the best monitor recommender in the world.
+                    </h2>
                     <ul>
                         <li>
                             Trained on thousands of conversations in Monitor
