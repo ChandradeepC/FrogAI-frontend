@@ -5,26 +5,48 @@
   justify-content: space-between;
 }
 
-.forms-container {
+/* .forms-container {
   display: flex;
   flex-basis: 50%;
   margin-top: 5rem;
+} */
+
+.forms-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-column-gap: 0rem; 
+  margin-top: 7.5rem;
 }
 
-.left-column {
-  /* flex-basis: 30%; */
+/* .left-column {
   max-width: 35rem;
   min-width: 35rem;
   padding: 0 1rem;
+} */
+
+.left-column {
+  max-width: 40rem;
+  min-width: 40rem;
+  padding: 0 1rem;
 }
 
-.right-column {
-  /* flex-basis: 70%; */
-  padding: 0 1rem;
-  max-width: 47rem;
-  min-width: 47rem;
-  margin-left: 5rem;
+.right-wrapper{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2rem;
 }
+
+
+.right-column {
+  padding: 0 1rem;
+  max-width: 55rem;
+  min-width: 55rem;
+  margin-left: -5rem;
+}
+/* 
+.forms-container > * {
+  grid-column: span 1;
+} */
 
 .frogai-heading {
   font-size: 3rem;
@@ -204,10 +226,6 @@
 
 
 @media (max-width: 70rem) {
-/* .forms-container {
-    flex-direction: column;
-    align-items: center;
-  } */
   .left-column {
     min-width: auto; 
     width: auto;
@@ -216,6 +234,9 @@
     margin-top: 0px;
     min-width: auto; 
     margin-left: 0px;
+  }
+  .right-wrapper{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

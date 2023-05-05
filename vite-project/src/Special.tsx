@@ -38,57 +38,55 @@ const SpecialForm: React.FC<Props> = ({
                         professional esports.
                     </div>
                 )}
-            <div className="field">
-                <label htmlFor="esports">Professional esports:</label>
-                <select
-                    id="esports"
-                    name="esports"
-                    value={esports}
-                    onChange={handleInputChange}
-                >
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </select>
-            </div>
-            <div className="field">
-                <label htmlFor="print">Print photo editing:</label>
-                <select
-                    id="print"
-                    name="print"
-                    value={print}
-                    onChange={handleInputChange}
-                >
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </select>
-            </div>
-            <div className="field">
-                <label htmlFor="edit">
-                    Digital photo editing or SDR video editing:
-                </label>
-                <select
-                    id="edit"
-                    name="edit"
-                    value={edit}
-                    onChange={handleInputChange}
-                >
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </select>
-            </div>
-            <div className="field">
-                <label htmlFor="grade">
-                    HDR video editing or color grading:
-                </label>
-                <select
-                    id="grade"
-                    name="grade"
-                    value={grade}
-                    onChange={handleInputChange}
-                >
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </select>
+            <div className="field-grid">
+                <div className="field">
+                    <label htmlFor="esports">Esports:</label>
+                    <select
+                        id="esports"
+                        name="esports"
+                        value={esports}
+                        onChange={handleInputChange}
+                    >
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div className="field">
+                    <label htmlFor="print">Print photo editing:</label>
+                    <select
+                        id="print"
+                        name="print"
+                        value={print}
+                        onChange={handleInputChange}
+                    >
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div className="field">
+                    <label htmlFor="edit">Photo / video editing:</label>
+                    <select
+                        id="edit"
+                        name="edit"
+                        value={edit}
+                        onChange={handleInputChange}
+                    >
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div className="field">
+                    <label htmlFor="grade">Color grading:</label>
+                    <select
+                        id="grade"
+                        name="grade"
+                        value={grade}
+                        onChange={handleInputChange}
+                    >
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
             </div>
         </div>
     );

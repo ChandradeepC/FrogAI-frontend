@@ -183,15 +183,24 @@ const RecommendationForm: React.FC<Props> = ({
     ]);
 
     return (
-        <div>
+        <div className="right-wrapper">
             {print === 'yes' || edit === 'yes' || grade === 'yes' ? (
                 <div>
-                    <div className="monitor-box">
+                    <div className="monitor-box colorimeter">
                         <h3>
                             <span>Calibrite ColorChecker Display</span>
                             <span className="cost"> $170-320</span>
                         </h3>
                         <div className="meters">
+                            <div className="warning">
+                                <p>
+                                    <i>
+                                        Your use case requires a colorimeter!
+                                        Enter your budget after subtracting the
+                                        cost of the colorimeter.
+                                    </i>
+                                </p>
+                            </div>
                             <p>
                                 <label>Base:</label> Slower; upto 1000nits
                                 <span></span>
@@ -218,7 +227,7 @@ const RecommendationForm: React.FC<Props> = ({
                             </a>
                         </p>
                     </div>
-                    <div className="medium-plus">+</div>
+                    {/* <div className="medium-plus">+</div> */}
                 </div>
             ) : null}
             {monitorRecommendations.length > 0 ? (
@@ -252,12 +261,13 @@ const RecommendationForm: React.FC<Props> = ({
                                     <label>Panel:</label>{' '}
                                     <span>{monitor.panel}</span>
                                 </p>
+                            </div>
+                            <div className="grid-item">
                                 <p>
                                     <label>Size:</label>{' '}
                                     <span>{monitor.size}"</span>
                                 </p>
-                            </div>
-                            <div className="grid-item">
+
                                 {/* <p>Minimum GPU: {monitor.minGpu}</p> */}
                                 <p>
                                     <label>Curved:</label>{' '}
@@ -267,6 +277,8 @@ const RecommendationForm: React.FC<Props> = ({
                                     <label>Aspect ratio:</label>{' '}
                                     <span>{monitor.aspectRatio}</span>
                                 </p>
+                            </div>
+                            <div className="grid-item">
                                 <p>
                                     <label>Adobe RGB:</label>{' '}
                                     <span>{monitor.adobeRgb}</span>
@@ -298,8 +310,8 @@ const RecommendationForm: React.FC<Props> = ({
             ) : (
                 <div className="premessage-container">
                     <div className="premessage">
-                        No such monitors exist or are worth recommending. <br />{' '}
-                        Try removing some filters or increasing your budget.
+                        No such monitors exist or are worth recommending. Try
+                        removing some filters or increasing your budget.
                     </div>
                 </div>
             )}

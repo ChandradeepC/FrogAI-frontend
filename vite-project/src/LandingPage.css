@@ -5,8 +5,8 @@
     flex-direction: column;
     align-items: center;
     margin-top: 5rem;
-    min-width: 87rem;
-    max-width: 87rem;
+    min-width: 100rem;
+    max-width: 100rem;
     padding: 0 2rem;
   }
   
@@ -73,7 +73,8 @@
 
   @media (prefers-color-scheme: dark) {
     .LandingPage {
-      background-color:  #0d1117;
+      /* background-color:  #0d1117; */
+      background-color: #020304;
     }
 
     /* .LandingPage ul {
