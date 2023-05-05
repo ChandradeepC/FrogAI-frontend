@@ -17,13 +17,13 @@ const App = () => {
     //-----------------------------------------------------------
     const [mode, setMode] = useState<string>('basic');
     //-----------------------------------------------------------
-    const [persistence, setPersistence] = useState<string>('some');
-    const [response, setResponse] = useState<string>('some');
-    const [contrast, setContrast] = useState<string>('some');
-    const [brightness, setBrightness] = useState<string>('some');
-    const [volume, setVolume] = useState<string>('some');
-    const [sharp, setSharp] = useState<string>('some');
-    const [subpixel, setSubpixel] = useState<string>('some');
+    const [persistence, setPersistence] = useState<string>('not');
+    const [response, setResponse] = useState<string>('not');
+    const [contrast, setContrast] = useState<string>('not');
+    const [brightness, setBrightness] = useState<string>('not');
+    const [volume, setVolume] = useState<string>('not');
+    const [sharp, setSharp] = useState<string>('not');
+    const [subpixel, setSubpixel] = useState<string>('not');
     //-----------------------------------------------------------
     const [casual, setCasual] = useState<string>('not');
     const [comp, setComp] = useState<string>('not');

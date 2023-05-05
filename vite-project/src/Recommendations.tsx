@@ -249,6 +249,29 @@ const RecommendationForm: React.FC<Props> = ({
                         )}
                         <div className="spec-grid">
                             <div className="grid-item">
+                                <div className={`${monitor.persistence}`}>
+                                    <p>
+                                        <span>
+                                            {monitor.persistence} motion
+                                        </span>
+                                    </p>
+                                </div>
+                                <div className={`${monitor.contrast}`}>
+                                    <p>
+                                        <span>
+                                            {monitor.contrast} picture quality
+                                        </span>
+                                    </p>
+                                </div>
+                                <div className={`${monitor.subpixel}`}>
+                                    <p>
+                                        <span>
+                                            {monitor.subpixel} text quality
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="grid-item">
                                 <p>
                                     <label>Resolution:</label>{' '}
                                     <span>{monitor.resolution}</span>
