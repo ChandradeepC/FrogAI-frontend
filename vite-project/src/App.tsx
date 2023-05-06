@@ -242,23 +242,24 @@ const App = () => {
     return (
         <div>
             <div className="wrapper">
-                <div className="header-container">
-                    <div className="color-bar"></div>
-                    <div className="brand">
-                        <img
-                            src={frogaiLogo}
-                            alt="FrogAI Logo"
-                            className="frogai-logo"
-                        />
-                        <div className="logo-text">
-                            <h1 className="header">FrogAI</h1>
-                            <p className="tagline">
-                                Monitor recommendations v1.0
-                            </p>
+                <a href="/" className="header-container">
+                    <div>
+                        <div className="color-bar"></div>
+                        <div className="brand">
+                            <img
+                                src={frogaiLogo}
+                                alt="FrogAI Logo"
+                                className="frogai-logo"
+                            />
+                            <div className="logo-text">
+                                <h1 className="header">FrogAI</h1>
+                                <p className="tagline">
+                                    Monitor recommendations v1.0
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                </a>
                 <div className="forms-container">
                     <div className="left-column">
                         {/* <h2>Form:</h2> */}
@@ -329,6 +330,17 @@ const App = () => {
                             hub={hub}
                             handleInputChange={handleInputChange}
                         />
+                        <div className="discord-link">
+                            <p>
+                                Want to learn more? Join{' '}
+                                <a
+                                    href="https://discord.gg/ultrawide"
+                                    className="monitor-enthusiasts-link"
+                                >
+                                    Monitor Enthusiasts
+                                </a>
+                            </p>
+                        </div>
                     </div>
                     <div className="right-column">
                         <RecommendationForm
@@ -373,6 +385,7 @@ const App = () => {
                     </div>
                 </div>
             </div>
+
             <div className="footer-container">
                 <div className="bottom-text">
                     <p>© 2023 theNullCrown</p>

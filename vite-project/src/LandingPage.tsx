@@ -34,7 +34,8 @@ const LandingPage: React.FC = () => {
                         </li>
                         <li>
                             Based on the strong opinions of monitor nerds who
-                            talk about monitors 24/7
+                            talk about monitors 24/7 and have nothing better to
+                            do
                         </li>
                         <li>
                             Monitors selected based on objective measurements
@@ -42,22 +43,22 @@ const LandingPage: React.FC = () => {
                             feedback, frog pursuits and UFO tests
                         </li>
                         <li>
-                            Consideration for quirks in every recommended
-                            monitor
+                            Consideration for quirks and flaws in every
+                            recommended monitor
                         </li>
                         <li>No Samsung or Dough(Eve) bullshit</li>
                         <li>
-                            Attention to detail and nuance (a generally bad
+                            Attention to detail and nuance (e.g. a generally bad
                             reviewer might have one good review)
                         </li>
+                        <li>Algorithm tuned for every possible scenario</li>
                         <li>
-                            Algorithm individually tuned for different platforms
-                            and use cases.
+                            Links to professional reviews only, no amateurs
+                            (Optimum Tech) or advertisements (Linus Tech Tips)
                         </li>
                         <li>
-                            Links to professional reviews only, no
-                            advertisements (<i>cough</i> Optimum Tech,{' '}
-                            <i>cough</i>)
+                            Always up-to-date with the latest developments in
+                            the monitor sphere
                         </li>
                     </ul>
                     <Link to="/recommender">

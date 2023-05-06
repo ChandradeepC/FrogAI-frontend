@@ -37,7 +37,7 @@
 
 .monitor-box p {
     margin: 0.3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding-bottom: 0px;
 }
 
@@ -59,7 +59,7 @@
     font-weight: bold;
   } */
 
-.monitor-box p:last-of-type {
+.monitor-box p:last-child {
     margin-bottom: 0;
     border-bottom: none;
 }
